@@ -1,0 +1,82 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Page header
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".deposits-page-header"
+
+#{$block}
+  position: fixed
+  z-index: 10003
+  top: 0
+  right: 0
+  left: 0
+  width: 100%
+  background-color: map-get($app-palette, bg-light)
+  border-bottom: 1px solid map-get($app-palette, border-primary)
+  padding: 15px 0
+
+  @media screen and (max-width: 1280px)
+    padding: 15px 40px
+
+  @media screen and (max-width: 1120px)
+    padding: 15px 35px
+
+  @media screen and (max-width: 960px)
+    padding: 15px 30px
+
+  @media screen and (max-width: 800px)
+    padding: 15px 25px
+
+  @media screen and (max-width: 640px)
+    padding: 15px 20px
+
+  @media screen and (max-width: 480px)
+    padding: 15px
+
+
+  &__inner
+    display: block
+    width: 100%
+    max-width: 1200px
+    margin: 0 auto
+
+
+  &__group
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: flex-start
+    width: 100%
+
+
+  &__logo
+    flex-grow: 0
+    flex-shrink: 0
+
+
+  &__logo-link
+    font-family: $f-sans
+    font-size: 20px
+    line-height: 1
+    font-weight: 600
+    color: map-get($app-palette, text-primary)
+    text-decoration: none
+    opacity: 1
+    transition: all .5s
+
+    &:hover
+      text-decoration: none
+      opacity: 0.5
+
+
+

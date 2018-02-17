@@ -1,0 +1,27 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Body
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".deposits-body"
+
+#{$block}
+  position: relative
+  display: block
+  width: 100%
+  padding-top: 60px
+  overflow-x: hidden
+  background-color: map-get($app-palette, bg-primary)
+
+  &_state_modal,
+  &_state_modal-opened
+    overflow: hidden
