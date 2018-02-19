@@ -151,6 +151,9 @@ $block: ".deposits-form-field"
         #{$block}_size_s &
           width: 100%
 
+      &:invalid
+        box-shadow: none
+
       &:focus
         outline: none
         box-shadow: 0 0 3px -1px map-get($app-palette, accent-blue)
