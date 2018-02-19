@@ -69,6 +69,9 @@ $block: ".deposits-form-checkbox"
     line-height: 20px
     padding-left: 30px
 
+    #{$block}__input:disabled ~ &
+      cursor: not-allowed
+
     &:before
       content: ""
       position: absolute
@@ -84,6 +87,11 @@ $block: ".deposits-form-checkbox"
       #{$block}__input:checked ~ &
         background-color: map-get($app-palette, accent-blue)
         border-color: map-get($app-palette, accent-blue)
+
+      #{$block}__input:disabled ~ &,
+      #{$block}__input:checked:disabled ~ &,
+        background-color: map-get($app-palette, bg-secondary)
+        border-color: map-get($app-palette, border-primary)
 
     &:after
       content: "\e914"
@@ -105,6 +113,9 @@ $block: ".deposits-form-checkbox"
 
       #{$block}__input:checked ~ &
         visibility: visible
+
+      #{$block}__input:checked:disabled ~ &
+        color: map-get($app-palette, text-primary)
 
     // $Common form checkbox input label text MOD: no-label text
     &_type_no-label

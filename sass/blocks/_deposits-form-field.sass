@@ -125,7 +125,8 @@ $block: ".deposits-form-field"
     & input
       display: block
       width: 100%
-      padding: 14px 10px
+      min-height: 50px
+      padding: 15px 10px
       font-family: $f-sans
       font-size: 14px
       color: map-get($app-palette, text-primary)
@@ -135,28 +136,22 @@ $block: ".deposits-form-field"
       border: 1px solid map-get($app-palette, border-primary)
       border-radius: 2px
 
-      #{$block}_size_s &
-        width: 150px
-        padding: 8px 10px
-        font-size: 12px
-
-      #{$block}_size_narrow &
-        padding: 8px 10px
-
-      #{$block}_state_error &
+      #{$block}_state_error &,
+      &:invalid
         border-color: map-get($app-palette, accent-red)
         color: map-get($app-palette, accent-red)
-
-      @media screen and (max-width: 960px)
-        #{$block}_size_s &
-          width: 100%
-
-      &:invalid
         box-shadow: none
 
       &:focus
         outline: none
         box-shadow: 0 0 3px -1px map-get($app-palette, accent-blue)
+
+      &:disabled
+        background-color: map-get($app-palette, bg-secondary)
+        cursor: not-allowed
+
+      &:not([type="date"]):read-only
+        background-color: map-get($app-palette, bg-secondary)
 
       &::-webkit-input-placeholder
         color: map-get($app-palette, text-faded) !important
