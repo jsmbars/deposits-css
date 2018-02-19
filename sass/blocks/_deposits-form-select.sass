@@ -2,7 +2,7 @@
 @import '../helpers/mixins'
 
 ////////////////////////////////////////
-// $Common form field
+// $Common form select
 ////////////////////////////////////////
 
 //////////////////////////////////////// Block variables
@@ -12,42 +12,42 @@
 
 
 //////////////////////////////////////// Block styles
-$block: ".deposits-form-field"
+$block: ".deposits-form-select"
 
 #{$block}
   position: relative
   display: block
   width: 100%
 
-  // $Common form field MOD: role control
+  // $Common form select MOD: role control
   &_role_control
     display: flex
     flex-direction: row
     justify-content: flex-start
     align-items: center
 
-  // $Common form field MOD: role control reversed
+  // $Common form select MOD: role control reverse
   &_role_control-reverse
     display: flex
     flex-direction: row-reverse
     justify-content: flex-end
     align-items: center
 
-  // $Common form field MOD: state error
-  &_state_error
+  // $Common form select MOD: role search
+  &_role_search
 
-  // $Common form field MOD: no top label
+  // $Common form select MOD: no top label
   &_no-label
     padding-top: 20px
 
-  // $Common form field MOD: size small
+  // $Common form select MOD: size small
   &_size_s
 
-  // $Common form field MOD: size narrow
+  // $Common form select MOD: size narrow
   &_size_narrow
 
 
-  // $Common form field label
+  // $Common form select label
   &__label
     display: block
     width: 100%
@@ -55,10 +55,10 @@ $block: ".deposits-form-field"
     font-family: $f-sans
     font-size: 14px
     color: map-get($app-palette, text-primary)
-    font-weight: 400
+    font-weight: 600
     line-height: 1
 
-    // $Common form field label text CONTEXT: $Common form MOD: role control
+    // $Common form select label text CONTEXT: $Common form select MOD: role control
     #{$block}_role_control &,
     #{$block}_role_control-reverse &
       flex-grow: 0
@@ -74,7 +74,7 @@ $block: ".deposits-form-field"
     #{$block}_role_control-reverse &
       margin-left: 10px
 
-    // $Common form field label-text CONTEXT: $Common form field MOD: type required field
+    // $Common form select label-text CONTEXT: $Common form select MOD: type required field
     #{$block}_type_required &
       &:after
         content: '*'
@@ -84,57 +84,79 @@ $block: ".deposits-form-field"
       #{$block}_role_control &,
       #{$block}_role_control-reverse &
         width: 90px
+        white-space: normal
 
-    // $Common form field label MOD: adjust control fluid
+    // $Common form select label MOD: adjust control fluid
     &_adjust_control-fluid
-      width: auto
       @media screen and (max-width: 960px)
         #{$block}_role_control &,
         #{$block}_role_control-reverse &
           width: auto
 
-    // $Common form field label MOD: adjust control wrap
+    // $Common form select label MOD: adjust control wrap
     &_adjust_control-wrap
       #{$block}_role_control &,
       #{$block}_role_control-reverse &
         white-space: normal
 
-    // $Common form field label MOD: size small
+    // $Common form select label MOD: size small
     &_size_small
       font-size: 12px
 
-    // $Common form field label MOD: no wrap
+    // $Common form select label MOD: no wrap
     &_nowrap
       white-space: nowrap
 
 
-  // $Common form field label text
+  // $Common form select label text
   &__label-text
 
 
-  // $Common form field input
+  // $Common form select input
   &__input
     position: relative
 
-    // $Common form field input CONTEXT: $Common form MOD: role control
+    // $Common form select input CONTEXT: $Common form select MOD: role control
     #{$block}_role_control &,
     #{$block}_role_control-reverse &
       flex-grow: 1
       flex-shrink: 1
 
-    & input
+    &:after
+      content: '\e919'
+      position: absolute
+      top: 50%
+      right: 13px
+      z-index: 10
+      display: block
+      font-family: icons
+      font-size: 20px
+      color: map-get($app-palette, text-primary)
+      line-height: 1
+      transform: translateY(-50%)
+
+      #{$block}_state_error &
+        color: map-get($app-palette, accent-red)
+
+    & select
       display: block
       width: 100%
       min-height: 50px
-      padding: 15px 10px
+      padding: 15px 40px 15px 10px
       font-family: $f-sans
       font-size: 14px
       color: map-get($app-palette, text-primary)
       font-weight: 400
       line-height: 1.5
-      background-color: map-get($app-palette, bg-light)
+      outline: none
       border: 1px solid map-get($app-palette, border-primary)
-      border-radius: 2px
+      border-radius: 0
+      background: none
+      background-color: map-get($app-palette, light-primary)
+      appearance: none
+      -moz-appearance: none
+      -webkit-appearance: none
+      transition: all .3s
 
       #{$block}_state_error &,
       &:invalid
@@ -146,64 +168,32 @@ $block: ".deposits-form-field"
         outline: none
         box-shadow: 0 0 3px -1px map-get($app-palette, accent-blue)
 
+      &::-ms-expand
+        display: none
+
+      &:focus::-ms-value
+        background-color: transparent
+        color: map-get($app-palette, text-primary)
+
       &:disabled
         background-color: map-get($app-palette, bg-secondary)
         cursor: not-allowed
 
-      &:not([type="date"]):read-only
-        background-color: map-get($app-palette, bg-secondary)
-
-      &::-webkit-input-placeholder
-        color: map-get($app-palette, text-faded) !important
-        opacity:  1 !important
-
-        #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
-
-      &:-moz-placeholder
-        color: map-get($app-palette, text-faded) !important
-        opacity:  1 !important
-
-        #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
-
-      &::-moz-placeholder
-        color: map-get($app-palette, text-faded) !important
-        opacity:  1 !important
-
-        #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
-
-      &:-ms-input-placeholder
-        color: map-get($app-palette, text-faded) !important
-        opacity:  1 !important
-
-        #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
-
-      &::-ms-input-placeholder
-        color: map-get($app-palette, text-faded) !important
-        opacity:  1 !important
-
-        #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
-
-      &::placeholder
-        color: map-get($app-palette, text-faded) !important
-        opacity:  1 !important
-
-        #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
-
-      &:placeholder-shown
-        color: map-get($app-palette, text-faded) !important
-        opacity:  1 !important
-
-        #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+    // $Common form select option
+    & option
+      display: block
+      width: 100%
+      max-width: 100%
+      font-family: $f-sans
+      font-size: 14px
+      color: map-get($app-palette, text-primary)
+      font-weight: 400
+      line-height: 1.5
+      outline: none
+      border: none
 
 
-  // $Common form field note
+  // $Common form select note
   &__note
     margin-top: 10px
     font-family: $f-sans

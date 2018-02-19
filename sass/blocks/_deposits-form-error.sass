@@ -19,45 +19,44 @@ $block: ".deposits-form-error"
   position: relative
   padding: 8px 10px 8px 30px
   background-color: map-get($app-palette, accent-red)
-
-  @media screen and (max-width: 480px)
-    padding: 5px 7px 5px 20px
+  border-radius: 2px
 
   &:before
     content: "\e911"
     position: absolute
-    top: 12px
+    top: 10px
     left: 10px
     display: block
-    width: 12px
-    height: 10px
     font-family: icons
     font-size: 10px
+    line-height: 1
     color: map-get($app-palette, text-light)
-
-    @media screen and (max-width: 480px)
-      top: 9px
-      left: 5px
 
   // $Common form error message MOD: position above
   &_position_above
-    margin-bottom: 30px
+    margin-bottom: 10px
 
   // $Common form error message MOD: position below
   &_position_below
-    margin-top: 30px
+    margin-top: 10px
+
+  // $Common form error message MOD: role general
+  &_role_general
+    padding: 15px 15px 15px 40px
+    margin-bottom: 30px
+
+    &:before
+      top: 18px
+      left: 15px
+      font-size: 14px
 
   // $Common form error message MOD: tooltip layout
   &_tooltip
-    border-radius: 3px
     position: absolute
     z-index: 10
 
     &:before
       top: 10px
-
-      @media screen and (max-width: 480px)
-        top: 7px
 
     &:after
       content: ""
@@ -70,9 +69,6 @@ $block: ".deposits-form-error"
     left: 0
     bottom: 100%
     margin-bottom: 5px
-
-    @media screen and (max-width: 480px)
-      left: -5px
 
     &:after
       top: 100%
@@ -90,9 +86,6 @@ $block: ".deposits-form-error"
     bottom: 100%
     margin-bottom: 5px
 
-    @media screen and (max-width: 480px)
-      right: -5px
-
     &:after
       top: 100%
       right: 15px
@@ -109,9 +102,6 @@ $block: ".deposits-form-error"
     top: 100%
     margin-top: 5px
 
-    @media screen and (max-width: 480px)
-      left: -5px
-
     &:after
       bottom: 100%
       left: 15px
@@ -124,9 +114,6 @@ $block: ".deposits-form-error"
     right: 0
     top: 100%
     margin-top: 5px
-
-    @media screen and (max-width: 480px)
-      right: -5px
 
     &:after
       bottom: 100%
@@ -141,18 +128,15 @@ $block: ".deposits-form-error"
     position: relative
     display: block
     font-family: $f-sans
-    font-size: 11px
+    font-size: 12px
     font-weight: 400
     color: map-get($app-palette, text-light)
 
-    @media screen and (max-width: 480px)
-      font-size: 10px
+    #{$block}_tooltip &
+      font-size: 11px
 
-    &_size_regular
+    #{$block}_role_general &
       font-size: 14px
-
-      @media screen and (max-width: 480px)
-        font-size: 13px
 
     &_nowrap
       white-space: nowrap

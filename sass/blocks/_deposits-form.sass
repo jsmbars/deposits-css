@@ -24,7 +24,7 @@ $block: ".deposits-form"
     position: relative
     display: block
     width: 100%
-    margin-bottom: 20px
+    margin-bottom: 30px
 
     // $Common form group MOD: size half
     // $Common form group MOD: size third
@@ -37,12 +37,12 @@ $block: ".deposits-form"
     &_size_max,
     &_size_min,
     &_size_fluid,
-      margin-right: 20px
+      margin-right: 30px
       margin-bottom: 0
 
       @media screen and (max-width: 960px)
         margin-right: 0
-        margin-bottom: 20px
+        margin-bottom: 30px
 
     &_size_half
       flex-grow: 0
@@ -107,22 +107,33 @@ $block: ".deposits-form"
       @media screen and (max-width: 960px)
         margin-right: 0
 
+    // $Common form group MOD: state visible
+    &_state_visible
+      display: block
+
+    // $Common form group MOD: state hidden
+    &_state_hidden
+      display: none
+
 
   // $Common form board
   &__board
     display: block
     width: 100%
     background-color: #FFF
-    box-shadow: 2px 2px 8px 0 map-get($app-palette, shadow-primary)
+    box-shadow: 0px 2px 8px -2px map-get($app-palette, shadow-primary)
 
 
   // $Common form board header
   &__board-header
-      padding: 15px 25px
-      background-color: map-get($app-palette, bg-secondary)
+    padding: 15px 25px
+    background-color: map-get($app-palette, bg-secondary)
 
-      @media screen and (max-width: 960px)
-        padding: 15px 10px
+    @media screen and (max-width: 960px)
+      padding: 15px 10px
+
+    &_type_light
+      background-color: map-get($app-palette, bg-light)
 
 
   // $Common form board title
@@ -136,10 +147,18 @@ $block: ".deposits-form"
 
   // $Common form board content
   &__board-content
-      padding: 15px 25px 25px
+    padding: 15px 25px 25px
 
-      @media screen and (max-width: 960px)
-        padding: 15px 10px 25px
+    @media screen and (max-width: 960px)
+      padding: 15px 10px 25px
+
+    // $Common form board content MOD: state visible
+    &_state_visible
+      display: block
+
+    // $Common form board content MOD: state hidden
+    &_state_hidden
+      display: none
 
 
   // $Common form row
@@ -149,7 +168,7 @@ $block: ".deposits-form"
     justify-content: flex-start
     align-items: center
     width: 100%
-    margin-bottom: 20px
+    margin-bottom: 30px
 
     @media screen and (max-width: 960px)
       flex-direction: column
@@ -181,7 +200,7 @@ $block: ".deposits-form"
     position: relative
     display: block
     width: 100%
-    margin-bottom: 20px
+    margin-bottom: 30px
 
     // $Common form field MOD: size half
     // $Common form field MOD: size third
@@ -194,7 +213,7 @@ $block: ".deposits-form"
     &_size_max,
     &_size_min,
     &_size_fluid
-      margin-right: 20px
+      margin-right: 30px
       margin-bottom: 0
 
       @media screen and (max-width: 960px)
@@ -203,7 +222,7 @@ $block: ".deposits-form"
           flex-grow: 1
           width: 100%
           margin-right: 0
-          margin-bottom: 20px
+          margin-bottom: 30px
 
     &_size_half
       flex-grow: 0
