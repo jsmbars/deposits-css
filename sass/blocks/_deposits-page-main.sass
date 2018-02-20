@@ -84,6 +84,9 @@ $block: ".deposits-page-main"
     padding: 30px
     background-color: map-get($app-palette, bg-light)
 
+    @media screen and (max-width: 1280px)
+      padding: 20px
+
 
   &__info
     display: flex
@@ -129,6 +132,19 @@ $block: ".deposits-page-main"
     align-items: flex-start
     justify-content: flex-start
     margin-bottom: 30px
+
+
+  &__actions
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+
+    &_position_above
+      margin-bottom: 30px
+
+    &_position_below
+      margin-top: 30px
 
 
   &__action

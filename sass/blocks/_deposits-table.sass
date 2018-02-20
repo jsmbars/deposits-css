@@ -22,6 +22,10 @@ $block: ".deposits-table"
   &_type_common
     display: table
 
+  &_role_bookings
+
+  &_role_selected-customers
+
 
   // $Common table group
   &__group
@@ -41,7 +45,6 @@ $block: ".deposits-table"
     justify-content: flex-start
     align-items: stretch
     width: 100%
-    border-bottom: 1px solid map-get($app-palette, border-primary)
     background-color: map-get($app-palette, bg-light)
 
     #{$block}_type_common &
@@ -62,6 +65,15 @@ $block: ".deposits-table"
 
       &:nth-child(odd)
         background-color: transparent
+
+    // $Common table row MOD: adjust action
+    &_adjust_action
+      cursor: pointer
+      transition: background-color, .3s
+
+      &:hover
+        background-color: lighten(map-get($app-palette, accent-blue), 20)
+
 
     // $Common table row MOD:  no border
     &_no-border,
@@ -90,7 +102,7 @@ $block: ".deposits-table"
     align-items: center
     min-height: 50px
     font-family: $f-sans
-    font-size: 12px
+    font-size: 14px
     font-weight: 400
     color: map-get($app-palette, text-primary)
     padding: 10px 15px
@@ -100,6 +112,14 @@ $block: ".deposits-table"
       height: 50px
       text-align: left
       vertical-align: middle
+      border-bottom: 1px solid map-get($app-palette, border-primary)
+
+    #{$block}_type_common #{$block}__row:last-child &
+      border-bottom: none
+
+    #{$block}_role_bookings &
+      padding-left: 10px
+      padding-right: 10px
 
     &:not(:last-child)
       border-right: 1px solid map-get($app-palette, border-primary)
@@ -111,7 +131,7 @@ $block: ".deposits-table"
     // $Common table cell MOD: role footer
     &_role_header,
     &_role_footer
-      font-weight: 800
+      font-weight: 600
 
     &_no-border
       &:not(:last-child)
@@ -126,12 +146,23 @@ $block: ".deposits-table"
   // $Common table text
   &__text
     font-family: $f-sans
-    font-size: 12px
-    font-weight: 400
+    font-size: 14px
+    font-weight: 300
     color: map-get($app-palette, text-primary)
 
     & > b
       font-weight: 600
+
+    // $Common table text MOD: adjust no wrap
+    &_adjust_no-wrap
+      white-space: nowrap
+
+    // $Common table text MOD: adjust wrap
+    &_adjust_wrap
+      overflow-wrap: break-word
+      word-wrap: break-word
+      word-break: break-word
+      hyphens: auto
 
 
   // $Common table actions
