@@ -116,6 +116,22 @@ $block: ".deposits-form-field"
   &__input
     position: relative
 
+    &:before
+      #{$block}_role_search &
+        content: "\e90e"
+        position: absolute
+        top: 50%
+        left: 10px
+        display: block
+        font-family: icons
+        font-size: 18px
+        line-height: 1
+        color: map-get($app-palette, text-secondary)
+        transform: translateY(-50%)
+
+      #{$block}_role_search#{$block}_state_error &
+        color: map-get($app-palette, accent-red)
+
     // $Common form field input CONTEXT: $Common form MOD: role control
     #{$block}_role_control &,
     #{$block}_role_control-reverse &
@@ -135,6 +151,9 @@ $block: ".deposits-form-field"
       background-color: map-get($app-palette, bg-light)
       border: 1px solid map-get($app-palette, border-primary)
       border-radius: 2px
+
+      #{$block}_role_search &
+        padding-left: 35px
 
       #{$block}_state_error &,
       &:invalid

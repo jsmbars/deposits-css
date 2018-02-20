@@ -25,6 +25,7 @@ $block: ".deposits-page-main"
     width: 100%
     padding-top: 30px
     background-color: map-get($app-palette, bg-light)
+    border-bottom: 1px solid map-get($app-palette, border-primary)
     box-shadow: 0 2px 8px -2px map-get($app-palette, shadow-primary)
 
     @media screen and (max-width: 1280px)
@@ -84,6 +85,9 @@ $block: ".deposits-page-main"
     padding: 30px
     background-color: map-get($app-palette, bg-light)
 
+    @media screen and (max-width: 1280px)
+      padding: 20px
+
 
   &__info
     display: flex
@@ -131,6 +135,19 @@ $block: ".deposits-page-main"
     margin-bottom: 30px
 
 
+  &__actions
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+
+    &_position_above
+      margin-bottom: 30px
+
+    &_position_below
+      margin-top: 30px
+
+
   &__action
 
 
@@ -138,3 +155,82 @@ $block: ".deposits-page-main"
     display: block
     width: 100%
     margin-bottom: 30px
+
+
+  &__dropdown
+    display: block
+    width: 100%
+
+
+  &__dropdown-header
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+
+
+  &__dropdown-switch
+    display: inline-block
+    font-family: $f-sans
+    font-size: 16px
+    line-height: 1
+    color: map-get($app-palette, text-primary)
+    white-space: nowrap
+    cursor: pointer
+    text-decoration: none
+
+    &:before,
+    &:after
+      content: ''
+      display: inline-block
+      font-family: icons
+      color: map-get($app-palette, text-primary)
+
+    &:before
+      margin-right: 10px
+
+    &:after
+      margin-left: 10px
+
+    &:hover
+      color: map-get($app-palette, text-secondary)
+
+      &:before,
+      &:after
+        color: map-get($app-palette, text-secondary)
+
+    // $Dropdown button MOD: role filter
+    &_role_filter
+      &:before
+        content: '\e917'
+        font-size: 18px
+        line-height: 16px
+
+      &:after
+        display: none
+
+    // $Dropdown button MOD: state closed
+    &_role_filter#{&}_state_closed
+      &:before
+          content: '\e918'
+
+
+  &__dropdown-extra
+    flex-grow: 1
+
+
+  &__dropdown-content
+
+    // $Dropdown area MOD: state closed
+    &_state_closed
+      display: none
+
+
+  &__dropdown-inner
+    display: block
+    width: 100%
+    margin-top: 20px
+    padding: 20px 30px
+    border-bottom: 1px solid map-get($app-palette, border-primary)
+    border-top: 1px solid map-get($app-palette, border-primary)
+
