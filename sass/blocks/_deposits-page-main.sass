@@ -79,6 +79,7 @@ $block: ".deposits-page-main"
     margin: 0 auto
 
 
+  // $Page main group
   &__group
     display: block
     width: 100%
@@ -89,6 +90,7 @@ $block: ".deposits-page-main"
       padding: 20px
 
 
+  // $Page main info area
   &__info
     display: flex
     flex-direction: row
@@ -101,6 +103,7 @@ $block: ".deposits-page-main"
       justify-content: flex-start
 
 
+  // $Page main info-group
   &__info-group
     display: block
 
@@ -108,6 +111,7 @@ $block: ".deposits-page-main"
       width: 100%
 
 
+  // $Page main title
   &__title
     flex-grow: 0
     display: block
@@ -125,6 +129,8 @@ $block: ".deposits-page-main"
       font-weight: 600
 
 
+  // $Page main info controls
+  // $Page main info actions
   &__info-controls,
   &__info-actions
     flex-shrink: 0
@@ -135,40 +141,47 @@ $block: ".deposits-page-main"
     margin-bottom: 30px
 
 
+  // $Page main actions
   &__actions
     display: flex
     flex-direction: column
     justify-content: flex-start
     align-items: center
 
+    // $Page main actions MOD: position above
     &_position_above
       margin-bottom: 30px
 
+    // $Page main actions MOD: position below
     &_position_below
       margin-top: 30px
 
 
+  // $Page main action
   &__action
 
 
+  // $Page main filter
   &__filter
     display: block
     width: 100%
     margin-bottom: 30px
 
 
+  // $Page main dropdown
   &__dropdown
     display: block
     width: 100%
 
 
+  // $Page main dropdown header
   &__dropdown-header
     display: flex
     flex-direction: row
     justify-content: space-between
     align-items: center
 
-
+  // $Page main dropdown switch
   &__dropdown-switch
     display: inline-block
     font-family: $f-sans
@@ -199,7 +212,7 @@ $block: ".deposits-page-main"
       &:after
         color: map-get($app-palette, text-secondary)
 
-    // $Dropdown button MOD: role filter
+    // $Page main dropdown switch MOD: role filter
     &_role_filter
       &:before
         content: '\e917'
@@ -209,23 +222,26 @@ $block: ".deposits-page-main"
       &:after
         display: none
 
-    // $Dropdown button MOD: state closed
+    // $Page main dropdown switch MOD: role filter state closed
     &_role_filter#{&}_state_closed
       &:before
           content: '\e918'
 
 
+  // $Page main dropdown extra content
   &__dropdown-extra
     flex-grow: 1
 
 
+  // $Page main dropdown content
   &__dropdown-content
 
-    // $Dropdown area MOD: state closed
+    // $Page main dropdown content MOD: state closed
     &_state_closed
       display: none
 
 
+  // $Page main dropdown inner
   &__dropdown-inner
     display: block
     width: 100%
