@@ -20,3 +20,97 @@ $block: ".deposits-fullcalendar"
     font-family: $f-sans
     font-weight: 400
     color: map-get($app-palette, text-primary)
+
+  &.fc button
+    font-family: $f-sans
+    font-size: 14px
+    font-weight: 300
+
+  & .fc-state-default
+    background-color: map-get($app-palette, bg-secondary)
+    background-image: none
+    box-shadow: none
+    text-shadow: none
+    border-color: map-get($app-palette, border-primary)
+
+  & .fc-state-hover,
+  & .fc-state-down,
+  & .fc-state-active,
+  & .fc-state-disabled
+    color: map-get($app-palette, text-light)
+    background-color: map-get($app-palette, accent-blue)
+    border-color: map-get($app-palette, accent-blue)
+
+  & .fc-state-hover
+    color: map-get($app-palette, text-light)
+    background-color: map-get($app-palette, accent-blue)
+    border-color: map-get($app-palette, accent-blue)
+    background-image: none
+
+  & .fc-state-down,
+  & .fc-state-active
+    color: map-get($app-palette, text-light)
+    background-color: map-get($app-palette, accent-blue)
+    border-color: map-get($app-palette, accent-blue)
+
+  & .fc-state-disabled
+    opacity: 1
+
+  &.fc table
+    font-family: $f-sans
+
+  &.fc th
+    padding: 10px
+    font-size: 14px
+    font-weight: 400
+    color: map-get($app-palette, text-primary)
+
+  & .fc-day-top
+    padding: 4px
+    font-size: 14px
+    color: map-get($app-palette, text-primary)
+
+  & .fc-event
+    font-size: 14px
+    font-weight: 300
+    line-height: 1.5
+    border-radius: 2px
+    border: 2px solid map-get($app-palette, accent-blue)
+    color: map-get($app-palette, text-light)
+
+  & .fc-event,
+  & .fc-event-dot
+    background-color: map-get($app-palette, accent-blue)
+
+  & .fc-event:hover
+    background-color: map-get($app-palette, bg-light)
+    color: map-get($app-palette, accent-blue)
+    font-weight: 400
+
+  & .fc-day-grid-event
+    margin: 0 4px 8px
+    padding: 0
+
+  & tr:first-child>td>.fc-day-grid-event
+    margin-top: 8px
+
+  & .fc-event .fc-content
+    padding: 2px 4px
+
+  &.fc-unthemed th,
+  &.fc-unthemed td,
+  &.fc-unthemed thead,
+  &.fc-unthemed tbody,
+  &.fc-unthemed .fc-divider,
+  &.fc-unthemed .fc-row,
+  &.fc-unthemed .fc-content,
+  &.fc-unthemed .fc-popover,
+  &.fc-unthemed .fc-list-view,
+  &.fc-unthemed .fc-list-heading td
+    border-color: map-get($app-palette, border-primary)
+
+  &.fc-unthemed td.fc-today
+    background: lighten(map-get($app-palette, accent-yellow), 25)
+
+  &.fc-unthemed .fc-disabled-day
+    background: map-get($app-palette, bg-secondary)
