@@ -155,10 +155,11 @@ $block: ".deposits-form-field"
       #{$block}_role_search &
         padding-left: 35px
 
-      #{$block}_state_error &,
-      &:invalid
+      #{$block}_state_error &
         border-color: map-get($app-palette, accent-red)
         color: map-get($app-palette, accent-red)
+
+      &:invalid
         box-shadow: none
 
       &:focus

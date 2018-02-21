@@ -69,10 +69,11 @@ $block: ".deposits-form-textarea"
       box-shadow: none
       background-color: map-get($app-palette, light-primary)
 
-      #{$block}_state_error &,
-      &:invalid
+      #{$block}_state_error &
         border-color: map-get($app-palette, accent-red)
         color: map-get($app-palette, accent-red)
+
+      &:invalid
         box-shadow: none
 
       &:focus

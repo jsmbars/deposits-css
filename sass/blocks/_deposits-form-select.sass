@@ -158,10 +158,11 @@ $block: ".deposits-form-select"
       -webkit-appearance: none
       transition: all .3s
 
-      #{$block}_state_error &,
-      &:invalid
+      #{$block}_state_error &
         border-color: map-get($app-palette, accent-red)
         color: map-get($app-palette, accent-red)
+
+      &:invalid
         box-shadow: none
 
       &:focus
