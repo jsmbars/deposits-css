@@ -1,0 +1,53 @@
+////////////////////////////////////////
+// $Generic button
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".generic-button"
+
+#{$block}
+  display: inline-block
+  padding: 12px 24px
+  border-radius: 4px
+  font-family: $f-generic
+  font-size: 16px
+  line-height: 1
+  font-weight: 400
+  text-decoration: none
+  white-space: nowrap
+  vertical-align: middle
+  text-align: center
+  outline: none
+  cursor: pointer
+  border: none
+  background-color: map-get($app-palette, dark-gray)
+  color: #fff
+  transition: all .3s
+
+  &:hover
+    opacity: 0.8
+
+  &:focus
+    outline: none
+
+  // $Generic button MOD: state disabled
+  &_state_disabled[disabled],
+  &_state_disabled,
+  &[disabled],
+    background-color: #ccc
+    cursor: not-allowed
+
+    &:hover,
+    &:focus
+      background-color:#ccc
+
+
+  // $Generic button text
+  &__text
+    vertical-align: middle
