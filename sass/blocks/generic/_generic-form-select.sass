@@ -1,0 +1,142 @@
+////////////////////////////////////////
+// $Generic form select
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".generic-form-select"
+
+#{$block}
+  position: relative
+  display: block
+  width: 100%
+
+  // $Generic form select MOD: type required
+  &_type_required
+
+  // $Generic form select MOD: state error
+  &_state_error
+
+
+  // $Generic form select label
+  &__label
+    display: block
+    width: 100%
+    margin-bottom: 10px
+    font-family: $f-generic
+    font-size: 14px
+    color: map-get($app-palette, text-primary)
+    font-weight: 600
+    line-height: 1
+
+    // $Generic form select label-text CONTEXT: $Generic form field MOD: type required field
+    #{$block}_type_required &
+      &:after
+        content: '*'
+        margin-left: 2px
+
+
+  // $Generic form select label text
+  &__label-text
+
+
+  // $Generic form select input
+  &__input
+    position: relative
+
+    & select
+      display: block
+      width: 100%
+      min-height: 40px
+      padding: 10px 40px 10px 10px
+      font-family: $f-generic
+      font-size: 14px
+      color: map-get($app-palette, text-primary)
+      font-weight: 400
+      line-height: 1.5
+      outline: none
+      border: 1px solid map-get($app-palette, border-primary)
+      border-radius: 2px
+      background: map-get($app-palette, light-primary)
+      appearance: none
+      -moz-appearance: none
+      -webkit-appearance: none
+      transition: all .3s
+
+      #{$block}_state_error &
+        border-color: map-get($app-palette, accent-red)
+        color: map-get($app-palette, accent-red)
+
+      &:invalid
+        box-shadow: none
+
+      &:focus
+        outline: none
+        box-shadow: 0 0 4px -1px map-get($app-palette, light-gray)
+
+      &::-ms-expand
+        display: none
+
+      &:focus::-ms-value
+        background-color: transparent
+        color: map-get($app-palette, text-primary)
+
+      &:disabled
+        background-color: map-get($app-palette, bg-secondary)
+        cursor: not-allowed
+
+    // $Generic form select option
+    & option
+      display: block
+      width: 100%
+      max-width: 100%
+      font-family: $f-generic
+      font-size: 14px
+      color: map-get($app-palette, text-primary)
+      font-weight: 400
+      line-height: 1.5
+      outline: none
+      border: none
+
+      &:disabled
+        color: map-get($app-palette, text-faded)
+
+      &:focus
+        outline: none
+
+      &:focus::-ms-value
+        background-color: transparent
+        color: map-get($app-palette, text-primary)
+
+
+  // $Generic form select input arrow
+  &__input-arrow
+    position: absolute
+    top: 50%
+    right: 13px
+    z-index: 10
+    display: block
+    font-family: icons-generic
+    font-size: 20px
+    font-weight: 400
+    color: map-get($app-palette, text-primary)
+    line-height: 1
+    transform: translateY(-50%)
+
+    #{$block}_state_error &
+      color: map-get($app-palette, accent-red)
+
+
+  // $Generic form select note
+  &__note
+    margin-top: 10px
+    font-family: $f-generic
+    font-size: 14px
+    line-height: 1
+    font-weight: 400
+    color: map-get($app-palette, text-primary)

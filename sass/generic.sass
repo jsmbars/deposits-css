@@ -1,0 +1,112 @@
+////////////////////////////////////////
+/// $CONTENTS
+////////////////////////////////////////
+//
+// CONTENTS.............................Here we are!
+//
+// VENDOR...............................
+//
+// HELPERS..............................Variables, mixins, elements
+//  $Fonts..............................Offline and online fonts
+//  $Settings...........................Site settings
+//  $Reset..............................Default styles reset
+//  $Base...............................Some general styles
+//
+// BLOCKS...............................Page components
+// $Body................................
+// $Page header.........................
+// $Page navigation.....................
+// $Page main...........................
+// $Common button.......................
+// $Common form.........................
+// $Common form error message...........
+// $Common form field...................
+// $Common form textarea................
+// $Common form select..................
+// $Common form interval................
+// $Common form checkbox................
+// $Common table........................
+// $Pagination..........................
+// $Modal window........................
+
+// $Full Calendar.......................
+
+
+////////////////////////////////////////
+/// $VENDOR
+////////////////////////////////////////
+
+
+////////////////////////////////////////
+/// $HELPERS
+////////////////////////////////////////
+
+// $Fonts
+
+// Page icons-generic, custom set from icomoon
+@font-face
+    font-family: 'icons-generic'
+    src: url("../fonts/icons-generic/icons-generic.woff") format("woff"), url("../fonts/icons-generic/icons-generic.ttf") format("truetype"), url("../fonts/icons-generic/icons-generic.svg") format("svg")
+    font-weight: normal
+    font-style: normal
+
+// $Settings
+$app-palette: (bg-primary: #e4e7f2, bg-secondary: #f5f6fa, bg-light: #ffffff, shadow-primary: #535c68, shadow-secondary: transparentize(#535c68, .8), text-primary: #353b48, text-secondary: #718093, text-faded: #b2bec3, text-light: #ffffff, border-primary: #dcdde1, border-secondary: #f5f6fa, border-light: #ffffff, accent-blue: #74b9ff, accent-red: #ff7675, accent-yellow: #fdcb6e, accent-green: #26de81, accent-purple: #8c7ae6, accent-pink: #fd79a8, dark-gray: #2d3436, medium-gray: #636e72, light-gray: #b2bec3)
+
+$f-generic: 'Roboto', Helvetica, Arial, sans-serif
+
+// $Reset
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li, select,
+fieldset, form, textarea, input, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, menu,
+main, nav, output, ruby, section, summary,
+time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section
+  display: block
+
+button, input[type=submit]
+  cursor: pointer
+
+// $Base
+html, body
+  width: 100%
+  font-family: $f-generic
+
+
+////////////////////////////////////////
+/// $BLOCKS
+////////////////////////////////////////
+
+// $Common button
+@import './blocks/generic/generic-button'
+
+// $Common form
+@import './blocks/generic/generic-form'
+
+// $Common form error message
+@import './blocks/generic/generic-form-error'
+
+// $Common form field
+@import './blocks/generic/generic-form-field'
+
+// $Common form textarea
+@import './blocks/generic/generic-form-textarea'
+
+// $Common form select
+@import './blocks/generic/generic-form-select'
