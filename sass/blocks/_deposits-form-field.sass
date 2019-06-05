@@ -151,6 +151,9 @@ $block: ".deposits-form-field"
       background-color: map-get($app-palette, bg-light)
       border: 1px solid map-get($app-palette, border-primary)
       border-radius: 2px
+      appearance: none
+      -moz-appearance: none
+      -webkit-appearance: none
 
       #{$block}_role_search &
         padding-left: 35px
@@ -169,9 +172,6 @@ $block: ".deposits-form-field"
       &:disabled
         background-color: map-get($app-palette, bg-secondary)
         cursor: not-allowed
-
-      &:not([type="date"]):read-only
-        background-color: map-get($app-palette, bg-secondary)
 
       &::-webkit-input-placeholder
         color: map-get($app-palette, text-faded) !important
