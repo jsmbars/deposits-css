@@ -196,8 +196,26 @@ $block: ".deposits-form-select"
 
   // $Common form select note
   &__note
+    display: block
+    width: 100%
+    max-width: 100%
     margin-top: 10px
     font-family: $f-sans
     font-size: 14px
     line-height: 1
+    font-weight: 400
     color: map-get($app-palette, text-primary)
+
+
+  // $Common form select note line
+  &__note-line
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+
+  // $Common form select note bold
+  &__note-bold
+    font-weight: 600
