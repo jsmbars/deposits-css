@@ -144,6 +144,10 @@ $block: ".deposits-table"
     // $Common table cell first column
     &:nth-child(1)
 
+    &:nth-child(2)
+      #{$block}_role_package-editor &
+        text-align: center
+
     // $Common table cell MOD: role header
     // $Common table cell MOD: role footer
     &_role_header,
@@ -158,6 +162,9 @@ $block: ".deposits-table"
   // $Common table info
   &__info
     width: 100%
+
+    #{$block}_role_package-editor #{$block}__cell:nth-child(2) &
+      text-align: center
 
 
   // $Common table text

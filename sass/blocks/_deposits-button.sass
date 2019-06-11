@@ -44,7 +44,7 @@
     background-color: $bg-color
 
 
-=button-with-icon-left($icon: '', $icon-color: #fff, $icon-hover-color: null, $icon-active-color: null, $size: 18px)
+=button-with-icon-left($icon: '', $icon-color: inherit, $icon-hover-color: inherit, $icon-active-color: inherit, $size: 18px)
 
   &:before
     content: '#{$icon}'
@@ -57,18 +57,16 @@
     font-weight: normal
     vertical-align: middle
 
-  @if $icon-hover-color != null
-    &:hover
-      &:before
-        color: $icon-hover-color
+  &:hover
+    &:before
+      color: $icon-hover-color
 
-  @if $icon-active-color != null
-    &#{$block}_state_active
-      &:before
-        color: $icon-active-color
+  &#{$block}_state_active
+    &:before
+      color: $icon-active-color
 
 
-=button-with-icon-right($icon: '', $icon-color: #fff, $icon-hover-color: null, $icon-active-color: null, $size: 18px)
+=button-with-icon-right($icon: '', $icon-color: inherit, $icon-hover-color: inherit, $icon-active-color: inherit, $size: 18px)
 
   &:after
     content: '#{$icon}'
@@ -81,15 +79,13 @@
     font-weight: normal
     vertical-align: middle
 
-  @if $icon-hover-color != null
-    &:hover
-      &:after
-        color: $icon-hover-color
+  &:hover
+    &:after
+      color: $icon-hover-color
 
-  @if $icon-active-color != null
-    &#{$block}_state_active
-      &:after
-        color: $icon-active-color
+  &#{$block}_state_active
+    &:after
+      color: $icon-active-color
 
 
 //////////////////////////////////////// Block styles
@@ -189,6 +185,11 @@ $block: ".deposits-button"
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
+  &_color_accent-orange
+    $background-color: map-get($app-palette, accent-orange)
+    +button-common($background-color: $background-color)
+    +button-common-hover($background-color: $background-color)
+
   &_color_accent-yellow
     $background-color: map-get($app-palette, accent-yellow)
     +button-common($background-color: $background-color)
@@ -220,6 +221,11 @@ $block: ".deposits-button"
     +button-bordered($color: map-get($app-palette, accent-red), $bg-color: transparent, $border-color: map-get($app-palette, accent-red))
     +button-bordered-hover($color: #fff, $bg-color: map-get($app-palette, accent-red), $border-color: map-get($app-palette, accent-red))
     +button-bordered-active($color: #fff, $bg-color: map-get($app-palette, accent-red), $border-color: map-get($app-palette, accent-red))
+
+  &_border_accent-orange
+    +button-bordered($color: map-get($app-palette, accent-orange), $bg-color: transparent, $border-color: map-get($app-palette, accent-orange))
+    +button-bordered-hover($color: #fff, $bg-color: map-get($app-palette, accent-orange), $border-color: map-get($app-palette, accent-orange))
+    +button-bordered-active($color: #fff, $bg-color: map-get($app-palette, accent-orange), $border-color: map-get($app-palette, accent-orange))
 
   &_border_accent-yellow
     +button-bordered($color: map-get($app-palette, accent-yellow), $bg-color: transparent, $border-color: map-get($app-palette, accent-yellow))
@@ -255,29 +261,17 @@ $block: ".deposits-button"
   &_icon_zoom-plus
     +button-with-icon-left($icon: '\e908', $size: 14px)
 
-  &_icon_zoom-plus#{&}_border_accent-blue
-    +button-with-icon-left($icon: '\e908', $icon-color: map-get($app-palette, accent-blue), $icon-hover-color: #fff, $icon-active-color: #fff, $size: 14px)
-
   // $Common button MOD: icon check
   &_icon_check
     +button-with-icon-left($icon: '\e90d')
-
-  &_icon_checked#{&}_border_accent-green
-    +button-with-icon-left($icon: '\e90d', $icon-color: map-get($app-palette, accent-green), $icon-hover-color: #fff, $icon-active-color: #fff)
 
   // $Common button MOD: icon close
   &_icon_close
     +button-with-icon-left($icon: '\e909')
 
-  &_icon_close#{&}_border_accent-red
-    +button-with-icon-left($icon: '\e909', $icon-color: map-get($app-palette, accent-red), $icon-hover-color: #fff, $icon-active-color: #fff)
-
   // $Common button MOD: icon pencil
   &_icon_pencil
     +button-with-icon-left($icon: '\e91d', $size: 14px)
-
-  &_icon_pencil#{&}_border_accent-green
-    +button-with-icon-left($icon: '\e91d', $icon-color: map-get($app-palette, accent-green), $icon-hover-color: #fff, $icon-active-color: #fff, $size: 14px)
 
 
   // Specific buttons
