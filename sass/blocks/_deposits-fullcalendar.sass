@@ -16,6 +16,13 @@ $block: ".deposits-fullcalendar"
 
 #{$block}
 
+  & .fc-view-container *,
+  & .fc-view-container ::before,
+  & .fc-view-container ::after
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+
   & .fc-toolbar h2
     font-family: $f-sans
     font-size: 20px

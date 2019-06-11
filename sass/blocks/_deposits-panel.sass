@@ -1,0 +1,624 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Panel
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".deposits-panel"
+
+#{$block}
+  position: relative
+  z-index: 10
+  display: block
+  overflow: hidden
+  background-color: map-get($app-palette, bg-light)
+  border-radius: 10px
+
+  &:not(:last-child)
+    margin-bottom: 30px
+
+  &_type_faded
+    opacity: 0.6
+    transition: all .3s
+
+    &:hover
+      opacity: 1
+
+  &_page_calendar-daily-view
+    width: auto
+    margin: 20px 20px 5px
+    border: 1px solid #fff
+    border-radius: 8px
+    box-shadow: 0 5px 15px 0 map-get($app-palette, shadow-secondary)
+
+  &_page_calendar-daily-view#{&}_role_enquiry
+    border-color: #FFB147
+    background-color: #fff4e4
+
+  &_page_calendar-daily-view#{&}_role_booking
+    border-color: #428BCA
+    background-color: #ebf2f9
+
+  &_page_calendar-daily-view#{&}_role_deposit
+    border-color: #14BA29
+    background-color: #e4fce7
+
+
+  // $Panel header
+  &__header
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+    padding: 20px
+
+    #{$block}_page_calendar-daily-view &
+      padding: 15px 20px 10px
+
+    // $Panel header MOD: type marked
+    &_type_marked
+      background-color: map-get($app-palette, hyper-light-gray)
+
+
+  // $Panel header group
+  &__header-group
+    flex-grow: 1
+    flex-shrink: 1
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+
+  // $Panel header info
+  &__header-info
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    width: 100%
+
+
+  // $Panel header meta
+  &__header-meta
+    display: block
+    margin-top: 10px
+    padding: 0
+    list-style: none
+
+    &:not(:last-child)
+      @media screen and (max-width: 640px)
+        border-bottom: 1px solid map-get($app-palette, border-primary)
+
+
+  // $Panel header meta item
+  &__header-meta-item
+    display: inline-block
+    margin-bottom: 5px
+
+    @media screen and (max-width: 640px)
+      display: block
+      width: 100%
+
+    &:not(:last-child)
+      margin-right: 20px
+
+      @media screen and (max-width: 640px)
+        margin-right: 0
+
+
+  // $Panel header actions
+  &__header-actions
+    flex-grow: 0
+    flex-shrink: 0
+
+
+  // $Panel header action
+  &__header-action
+    #{$block}_page_calendar-daily-view &
+      height: auto
+      padding: 8px 16px
+
+
+  // $Panel header toggle
+  &__header-toggle
+    flex-grow: 0
+    flex-shrink: 0
+
+
+  // $Panel dropdown
+  &__dropdown
+    display: block
+    width: 100%
+
+    &:not(:first-child)
+      border-top: 1px solid map-get($app-palette, border-primary)
+
+    &_type_no-border,
+    &_type_no-border:not(:first-child)
+      border-top: none
+
+    &_state_closed
+      display: none
+
+
+  // $Panel inner
+  &__inner
+    display: block
+    width: 100%
+    padding: 20px 20px 30px
+
+
+  // $Panel content
+  &__content
+    display: block
+    width: 100%
+
+    &:not(:first-child)
+      border-top: 1px solid map-get($app-palette, border-primary)
+
+    &_type_marked
+      background-color: map-get($app-palette, hyper-light-gray)
+
+
+  // $Panel content inner
+  &__content-inner
+    display: block
+    width: 100%
+    padding: 20px 20px 30px
+
+
+  // $Panel group
+  &__group
+    display: block
+    width: 100%
+
+    &:not(:first-child)
+      border-top: 1px solid map-get($app-palette, border-primary)
+
+    &_type_no-border,
+    &_type_no-border:not(:first-child)
+      border-top: none
+
+    &_type_marked
+      background-color: map-get($app-palette, hyper-light-gray)
+
+
+  // $Panel group content
+  &__group-content
+    display: block
+    width: 100%
+    padding: 15px 20px
+
+
+  // $Panel group line
+  &__group-line
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+
+  // $Panel row
+  &__row
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: stretch
+
+    &:not(:first-child)
+      border-top: 1px solid map-get($app-palette, border-primary)
+
+    &_type_no-border,
+    &_type_no-border:not(:first-child)
+      border-top: none
+
+    // $Panel row MOD: marked
+    &_type_marked
+      background-color: map-get($app-palette, hyper-light-gray)
+
+
+  // $Panel cell
+  &__cell
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+    padding: 15px 20px
+    text-align: center
+
+    @media screen and (max-width: 960px)
+      padding: 15px
+
+    &:not(:last-child)
+      border-right: 1px solid map-get($app-palette, border-primary)
+
+    &_size_half
+      width: 50%
+
+    &_size_third
+      width: 33%
+
+    &_size_fourth
+      width: 25%
+
+    &_size_half#{&}_delimiter_light,
+    &_size_third#{&}_delimiter_light,
+    &_size_fourth#{&}_delimiter_light
+      position: relative
+
+      &:not(:last-child)
+        border-right: none
+
+        &:after
+          content: ""
+          position: absolute
+          top: 10px
+          bottom: 10px
+          right: 0
+          display: block
+          width: 0
+          border-right: 1px solid map-get($app-palette, border-primary)
+
+    // $Panel cell MOD: no border
+    &_type_no-border:not(:last-child)
+      border: none
+
+
+  &__cell-content
+    flex-grow: 0
+    flex-shrink: 1
+    display: block
+    width: auto
+    max-width: 100%
+    text-align: left
+
+
+  &__cell-group
+    display: block
+    width: auto
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+
+  &__cell-line
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+
+  // $Panel info list
+  &__info-list
+    display: block
+    width: 100%
+    padding: 10px 0
+
+
+  // $Panel info item
+  &__info-item
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: stretch
+
+
+  // $Panel info key
+  // $Panel info value
+  &__info-key,
+  &__info-value
+    flex-grow: 1
+    flex-shrink: 1
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 50%
+    padding: 10px 15px
+
+
+  &__info-key
+    align-items: flex-end
+    text-align: right
+
+
+  &__info-value
+    align-items: flex-start
+    text-align: left
+
+
+  // $Panel actions
+  &__actions
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: flex-start
+
+    // $Panel actions MOD: position above
+    &_position_above
+      margin-bottom: 30px
+
+    // $Panel actions MOD: position below
+    &_position_below
+      margin-top: 30px
+
+
+  // $Panel action
+  &__action
+    &:not(:last-child)
+      margin-right: 15px
+
+
+  // $Panel labels
+  &__labels
+    max-width: 100%
+
+
+  // $Panel label
+  &__label
+
+
+  &__title,
+  &__text
+    display: block
+    max-width: 100%
+    font-family: $f-sans
+    color: map-get($app-palette, text-primary)
+
+    &:before
+      display: inline-block
+      font-family: 'icons'
+      font-size: inherit
+      line-height: inherit
+      color: inherit
+      vertical-align: baseline
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+    &_adjust_wrap
+      overflow-wrap: break-word
+      word-wrap: break-word
+      word-break: break-word
+      hyphens: auto
+
+    &_adjust_action
+      cursor: pointer
+      text-decoration: underline
+
+      &:hover
+        text-decoration: none
+
+    &_adjust_crossed-out
+      text-decoration: line-through
+
+
+  // $Panel title
+  &__title
+    font-size: 18px
+    line-height: 1.2
+    font-weight: 600
+
+    &:before
+      margin-right: 10px
+
+    // $Panel title MOD: size small
+    &_size_s
+      font-size: 16px
+
+    // $Panel title MOD: size large
+    &_size_l
+      font-size: 20px
+
+    // $Panel title MOD: size extra large
+    &_size_xl
+      font-size: 22px
+
+
+  // $Panel title faded
+  &__title-faded
+    color: map-get($app-palette, text-secondary)
+
+
+  // $Panel title regular
+  &__title-regular
+    font-weight: 400
+
+
+  // $Panel title light
+  &__title-light
+    font-weight: 300
+
+
+  // $Panel title link
+  &__title-link
+    font-family: inherit
+    font-size: inherit
+    color: inherit
+    text-decoration: none
+    cursor: pointer
+
+    &:hover
+      text-decoration: underline
+
+
+  // $Panel text
+  &__text
+    font-size: 14px
+    line-height: 1.2
+    font-weight: 400
+
+    &:before
+      margin-right: 5px
+
+
+  // $Panel text faded
+  &__text-faded
+    color: map-get($app-palette, text-secondary)
+
+
+  // $Panel text bold
+  &__text-bold
+    font-weight: 600
+
+
+  // $Panel text light
+  &__text-light
+    font-weight: 300
+
+
+  // $Panel text link
+  &__text-link
+    font-family: inherit
+    font-size: inherit
+    color: inherit
+    text-decoration: none
+    cursor: pointer
+
+    &:hover
+      text-decoration: underline
+
+
+  // $Panel link
+  &__link
+    display: inline-block
+    max-width: 100%
+    font-family: $f-sans
+    font-size: 14px
+    font-weight: 400
+    color: map-get($app-palette, link-primary)
+    vertical-align: middle
+    text-decoration: none
+    transition: color .3s
+    cursor: pointer
+
+    &:hover,
+    &:focus
+      outline: none
+      text-decoration: underline
+      color: map-get($app-palette, accent-blue)
+
+  // $Panel toggle
+  &__toggle
+    display: inline-block
+    font-size: 0
+    line-height: 0
+    color: transparent
+    vertical-align: middle
+    outline: none
+    text-decoration: none
+    white-space: nowrap
+    cursor: pointer
+    transition: all .3s
+
+    &:before
+      content: ''
+      display: inline-block
+      font-family: 'icons'
+      font-size: 0
+      line-height: 0
+      color: map-get($app-palette, medium-gray)
+      vertical-align: middle
+      overflow: hidden
+      transition: all .3s
+
+    &:hover
+      &:before
+        color: map-get($app-palette, dark-gray)
+
+    // $Panel toggle MOD: role dropdown
+    &_role_dropdown
+      &:before
+        content: '\e91a'
+        font-size: 30px
+        line-height: 16px
+
+    &_role_dropdown#{&}_state_closed
+      &:before
+        content: '\e919'
+
+
+  // $Panel list
+  &__list
+    display: block
+    width: 100%
+    list-style: none
+
+
+  // $Panel list item
+  &__list-item
+    position: relative
+    display: block
+    width: 100%
+    padding-left: 15px
+
+    &:before
+      content: "-"
+      position: absolute
+      left: 0
+      top: 0
+      display: inline-block
+
+    &:not(:last-child)
+      margin-bottom: 15px
+
+
+  // $Panel meta
+  &__meta
+    display: block
+    margin: 0
+    padding: 0
+    list-style: none
+
+
+  // $Panel meta line
+  &__meta-line
+    display: block
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+
+  // $Panel meta item
+  &__meta-item
+    display: inline-block
+    margin-bottom: 5px
+
+    @media screen and (max-width: 640px)
+      display: block
+      width: 100%
+      margin-bottom: 10px
+
+    &:not(:last-child)
+      margin-right: 20px
+
+      @media screen and (max-width: 640px)
+        margin-right: 0
+
+
+  // $Panel text placeholder
+  &__text-placeholder
+    display: block
+    width: 100%
+    font-family: $f-sans
+    font-size: 16px
+    line-height: 1.2
+    color: map-get($app-palette, text-secondary)
+
