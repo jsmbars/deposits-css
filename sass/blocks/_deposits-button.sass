@@ -251,6 +251,13 @@ $block: ".deposits-button"
   &_icon_plus#{&}_border_accent-blue
     +button-with-icon-left($icon: '\e90a', $icon-color: map-get($app-palette, accent-blue), $icon-hover-color: #fff, $icon-active-color: #fff)
 
+  // $Common button MOD: icon zoom plus
+  &_icon_zoom-plus
+    +button-with-icon-left($icon: '\e908', $size: 14px)
+
+  &_icon_zoom-plus#{&}_border_accent-blue
+    +button-with-icon-left($icon: '\e908', $icon-color: map-get($app-palette, accent-blue), $icon-hover-color: #fff, $icon-active-color: #fff, $size: 14px)
+
   // $Common button MOD: icon check
   &_icon_check
     +button-with-icon-left($icon: '\e90d')
