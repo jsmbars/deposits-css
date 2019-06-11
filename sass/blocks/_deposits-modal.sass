@@ -35,6 +35,16 @@ $block: ".deposits-modal"
   &_state_hidden
     display: none
 
+  // $Modal window MOD: role confirm dialog
+  &_role_confirm
+    max-width: 480px
+    margin-top: 150px
+    margin-bottom: 150px
+
+    @media screen and (max-width: 480px)
+      margin-top: 100px
+      margin-bottom: 100px
+
 
   // $Modal window header
   // $Modal window footer
@@ -45,11 +55,21 @@ $block: ".deposits-modal"
     background-color: map-get($app-palette, bg-secondary)
     text-align: center
 
+    @media screen and (max-width: 960px)
+      padding: 20px 10px
+
 
   // $Modal window content
   &__content
     width: 100%
     padding: 30px 20px
+
+    @media screen and (max-width: 960px)
+      padding: 20px 10px
+
+    // $Modal window content MOD: justify center
+    &_justify_center
+      text-align: center
 
 
   // $Modal window content group
@@ -57,7 +77,7 @@ $block: ".deposits-modal"
     width: 100%
 
     &:not(:last-child)
-      margin-bottom: 30px
+      margin-bottom: 20px
 
     &_role_actions-middle
       display: flex
@@ -73,7 +93,7 @@ $block: ".deposits-modal"
     align-items: center
     justify-content: center
     width: 100%
-    padding: 30px 20px
+    text-align: center
 
 
   // $Modal window action
@@ -113,6 +133,13 @@ $block: ".deposits-modal"
     color: map-get($app-palette, text-secondary)
     font-weight: 400
 
+    @media screen and (max-width: 960px)
+      font-size: 18px
+      line-height: 1.3
+
+    &_size_extra
+      font-size: 22px
+
 
   // $Modal window text
   &__text
@@ -121,6 +148,9 @@ $block: ".deposits-modal"
     line-height: 1.5
     color: map-get($app-palette, text-primary)
     font-weight: 400
+
+    &_size_extra
+      font-size: 16px
 
 
   // $Modal window link
