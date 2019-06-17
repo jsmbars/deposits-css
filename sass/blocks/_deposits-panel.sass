@@ -39,6 +39,10 @@ $block: ".deposits-panel"
     border-radius: 8px
     box-shadow: 0 5px 15px 0 $c-shadow-secondary
 
+  &_page_table-planner
+    background-color: $c-accent-blue-light
+    border: 1px solid $c-accent-blue-medium
+
   &_page_calendar-daily-view#{&}_role_enquiry
     border-color: #FFB147
     background-color: #fff4e4
@@ -65,6 +69,9 @@ $block: ".deposits-panel"
     #{$block}_page_calendar-daily-view &
       padding: 15px 20px 10px
 
+    #{$block}_page_table-planner &
+      padding: 15px
+
     // $Panel header MOD: type marked
     &_type_marked
       background-color: $c-gray-hyper-light
@@ -90,6 +97,9 @@ $block: ".deposits-panel"
     flex-shrink: 1
     display: block
     width: 100%
+
+    #{$block}_page_table-planner &
+      padding-right: 10px
 
 
   // $Panel header meta

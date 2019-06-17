@@ -281,6 +281,13 @@ $block: ".deposits-form"
     flex-direction: row
     justify-content: flex-start
     align-items: center
+    width: 100%
+
+    &_justify_center
+      justify-content: center
+
+    &_justify_end
+      justify-content: flex-end
 
 
   // $Common form action
@@ -292,6 +299,16 @@ $block: ".deposits-form"
     // $Common form action MOD: state hidden
     &_state_hidden
       display: none
+
+    &_size_half
+      flex-grow: 1
+      flex-shrink: 1
+      width: 50%
+
+      &:not(:last-child)
+        margin-right: 20px
+
+
 
   // $Common form text
   &__text
