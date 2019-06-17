@@ -19,7 +19,7 @@ $block: ".deposits-panel"
   z-index: 10
   display: block
   overflow: hidden
-  background-color: map-get($app-palette, bg-light)
+  background-color: $c-bg-light
   border-radius: 10px
 
   &:not(:last-child)
@@ -35,9 +35,9 @@ $block: ".deposits-panel"
   &_page_calendar-daily-view
     width: auto
     margin: 20px 20px 5px
-    border: 1px solid #fff
+    border: 1px solid $c-border-light
     border-radius: 8px
-    box-shadow: 0 5px 15px 0 map-get($app-palette, shadow-secondary)
+    box-shadow: 0 5px 15px 0 $c-shadow-secondary
 
   &_page_calendar-daily-view#{&}_role_enquiry
     border-color: #FFB147
@@ -67,7 +67,7 @@ $block: ".deposits-panel"
 
     // $Panel header MOD: type marked
     &_type_marked
-      background-color: map-get($app-palette, hyper-light-gray)
+      background-color: $c-gray-hyper-light
 
 
   // $Panel header group
@@ -101,7 +101,7 @@ $block: ".deposits-panel"
 
     &:not(:last-child)
       @media screen and (max-width: 640px)
-        border-bottom: 1px solid map-get($app-palette, border-primary)
+        border-bottom: 1px solid $c-border-primary
 
 
   // $Panel header meta item
@@ -145,7 +145,7 @@ $block: ".deposits-panel"
     width: 100%
 
     &:not(:first-child)
-      border-top: 1px solid map-get($app-palette, border-primary)
+      border-top: 1px solid $c-border-primary
 
     &_type_no-border,
     &_type_no-border:not(:first-child)
@@ -168,10 +168,10 @@ $block: ".deposits-panel"
     width: 100%
 
     &:not(:first-child)
-      border-top: 1px solid map-get($app-palette, border-primary)
+      border-top: 1px solid $c-border-primary
 
     &_type_marked
-      background-color: map-get($app-palette, hyper-light-gray)
+      background-color: $c-gray-hyper-light
 
 
   // $Panel content inner
@@ -187,14 +187,14 @@ $block: ".deposits-panel"
     width: 100%
 
     &:not(:first-child)
-      border-top: 1px solid map-get($app-palette, border-primary)
+      border-top: 1px solid $c-border-primary
 
     &_type_no-border,
     &_type_no-border:not(:first-child)
       border-top: none
 
     &_type_marked
-      background-color: map-get($app-palette, hyper-light-gray)
+      background-color: $c-gray-hyper-light
 
 
   // $Panel group content
@@ -221,7 +221,7 @@ $block: ".deposits-panel"
     align-items: stretch
 
     &:not(:first-child)
-      border-top: 1px solid map-get($app-palette, border-primary)
+      border-top: 1px solid $c-border-primary
 
     &_type_no-border,
     &_type_no-border:not(:first-child)
@@ -229,7 +229,7 @@ $block: ".deposits-panel"
 
     // $Panel row MOD: marked
     &_type_marked
-      background-color: map-get($app-palette, hyper-light-gray)
+      background-color: $c-gray-hyper-light
 
 
   // $Panel cell
@@ -246,7 +246,7 @@ $block: ".deposits-panel"
       padding: 15px
 
     &:not(:last-child)
-      border-right: 1px solid map-get($app-palette, border-primary)
+      border-right: 1px solid $c-border-primary
 
     &_size_half
       width: 50%
@@ -273,7 +273,7 @@ $block: ".deposits-panel"
           right: 0
           display: block
           width: 0
-          border-right: 1px solid map-get($app-palette, border-primary)
+          border-right: 1px solid $c-border-primary
 
     // $Panel cell MOD: no border
     &_type_no-border:not(:last-child)
@@ -380,7 +380,7 @@ $block: ".deposits-panel"
     display: block
     max-width: 100%
     font-family: $f-sans
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
 
     &:before
       display: inline-block
@@ -434,7 +434,7 @@ $block: ".deposits-panel"
 
   // $Panel title faded
   &__title-faded
-    color: map-get($app-palette, text-secondary)
+    color: $c-text-secondary
 
 
   // $Panel title regular
@@ -471,7 +471,7 @@ $block: ".deposits-panel"
 
   // $Panel text faded
   &__text-faded
-    color: map-get($app-palette, text-secondary)
+    color: $c-text-secondary
 
 
   // $Panel text bold
@@ -503,7 +503,7 @@ $block: ".deposits-panel"
     font-family: $f-sans
     font-size: 14px
     font-weight: 400
-    color: map-get($app-palette, link-primary)
+    color: $c-link-primary
     vertical-align: middle
     text-decoration: none
     transition: color .3s
@@ -513,7 +513,7 @@ $block: ".deposits-panel"
     &:focus
       outline: none
       text-decoration: underline
-      color: map-get($app-palette, accent-blue)
+      color: $c-accent-blue
 
   // $Panel toggle
   &__toggle
@@ -534,14 +534,14 @@ $block: ".deposits-panel"
       font-family: 'icons'
       font-size: 0
       line-height: 0
-      color: map-get($app-palette, medium-gray)
+      color: $c-gray-medium
       vertical-align: middle
       overflow: hidden
       transition: all .3s
 
     &:hover
       &:before
-        color: map-get($app-palette, dark-gray)
+        color: $c-gray-dark
 
     // $Panel toggle MOD: role dropdown
     &_role_dropdown
@@ -620,5 +620,5 @@ $block: ".deposits-panel"
     font-family: $f-sans
     font-size: 16px
     line-height: 1.2
-    color: map-get($app-palette, text-secondary)
+    color: $c-text-secondary
 

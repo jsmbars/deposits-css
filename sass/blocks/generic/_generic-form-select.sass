@@ -30,7 +30,7 @@ $block: ".generic-form-select"
     margin-bottom: 10px
     font-family: $f-generic
     font-size: 14px
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     font-weight: 600
     line-height: 1
 
@@ -56,38 +56,38 @@ $block: ".generic-form-select"
       padding: 10px 40px 10px 10px
       font-family: $f-generic
       font-size: 14px
-      color: map-get($app-palette, text-primary)
+      color: $c-text-primary
       font-weight: 400
       line-height: 1.5
       outline: none
-      border: 1px solid map-get($app-palette, border-primary)
+      border: 1px solid $c-border-primary
       border-radius: 2px
-      background: map-get($app-palette, light-primary)
+      background-color: $c-bg-light
       appearance: none
       -moz-appearance: none
       -webkit-appearance: none
       transition: all .3s
 
       #{$block}_state_error &
-        border-color: map-get($app-palette, accent-red)
-        color: map-get($app-palette, accent-red)
+        border-color: $c-accent-red
+        color: $c-accent-red
 
       &:invalid
         box-shadow: none
 
       &:focus
         outline: none
-        box-shadow: 0 0 4px -1px map-get($app-palette, light-gray)
+        box-shadow: 0 0 4px -1px $c-gray-light
 
       &::-ms-expand
         display: none
 
       &:focus::-ms-value
         background-color: transparent
-        color: map-get($app-palette, text-primary)
+        color: $c-text-primary
 
       &:disabled
-        background-color: map-get($app-palette, bg-secondary)
+        background-color: $c-bg-secondary
         cursor: not-allowed
 
     // $Generic form select option
@@ -97,21 +97,21 @@ $block: ".generic-form-select"
       max-width: 100%
       font-family: $f-generic
       font-size: 14px
-      color: map-get($app-palette, text-primary)
+      color: $c-text-primary
       font-weight: 400
       line-height: 1.5
       outline: none
       border: none
 
       &:disabled
-        color: map-get($app-palette, text-faded)
+        color: $c-text-faded
 
       &:focus
         outline: none
 
       &:focus::-ms-value
         background-color: transparent
-        color: map-get($app-palette, text-primary)
+        color: $c-text-primary
 
 
   // $Generic form select input arrow
@@ -124,12 +124,12 @@ $block: ".generic-form-select"
     font-family: icons-generic
     font-size: 20px
     font-weight: 400
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     line-height: 1
     transform: translateY(-50%)
 
     #{$block}_state_error &
-      color: map-get($app-palette, accent-red)
+      color: $c-accent-red
 
 
   // $Generic form select note
@@ -142,7 +142,7 @@ $block: ".generic-form-select"
     font-size: 14px
     line-height: 1
     font-weight: 400
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
 
 
   // $Generic form select note line

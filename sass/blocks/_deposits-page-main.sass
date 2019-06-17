@@ -24,8 +24,8 @@ $block: ".deposits-page-main"
     display: block
     width: 100%
     padding-top: 30px
-    background-color: map-get($app-palette, bg-light)
-    border-bottom: 1px solid map-get($app-palette, border-primary)
+    background-color: $c-bg-light
+    border-bottom: 1px solid $c-border-primary
 
     @media screen and (max-width: 1280px)
       padding: 30px 40px 0
@@ -83,7 +83,7 @@ $block: ".deposits-page-main"
     display: block
     width: 100%
     padding: 30px
-    background-color: map-get($app-palette, bg-light)
+    background-color: $c-bg-light
 
     @media screen and (max-width: 1280px)
       padding: 20px
@@ -118,7 +118,7 @@ $block: ".deposits-page-main"
     font-family: $f-sans
     font-size: 24px
     font-weight: 400
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     margin-bottom: 30px
 
     @media screen and (max-width: 960px)
@@ -190,7 +190,7 @@ $block: ".deposits-page-main"
     font-family: $f-sans
     font-size: 16px
     line-height: 1
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     white-space: nowrap
     cursor: pointer
     text-decoration: none
@@ -200,7 +200,7 @@ $block: ".deposits-page-main"
       content: ''
       display: inline-block
       font-family: icons
-      color: map-get($app-palette, text-primary)
+      color: $c-text-primary
 
     &:before
       margin-right: 10px
@@ -209,11 +209,11 @@ $block: ".deposits-page-main"
       margin-left: 10px
 
     &:hover
-      color: map-get($app-palette, text-secondary)
+      color: $c-text-secondary
 
       &:before,
       &:after
-        color: map-get($app-palette, text-secondary)
+        color: $c-text-secondary
 
     // $Page main dropdown switch MOD: role filter
     &_role_filter
@@ -254,6 +254,6 @@ $block: ".deposits-page-main"
     width: 100%
     margin-top: 20px
     padding: 20px 30px
-    border-bottom: 1px solid map-get($app-palette, border-primary)
-    border-top: 1px solid map-get($app-palette, border-primary)
+    border-bottom: 1px solid $c-border-primary
+    border-top: 1px solid $c-border-primary
 

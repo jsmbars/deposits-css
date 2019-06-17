@@ -10,7 +10,7 @@
 
 //////////////////////////////////////// Block mixins and functions
 
-=button-common($background-color: map-get($app-palette, dark-gray), $color: #fff )
+=button-common($background-color: $c-gray-dark, $color: $c-text-light )
   background-color: $background-color
   color: $color
 
@@ -21,14 +21,14 @@
     background-color: lighten($background-color, $amount)
 
 
-=button-bordered($color: map-get($app-palette, dark-gray), $border-color: map-get($app-palette, dark-gray), $border-width: 2px, $border-radius: 4px, $bg-color: map-get($app-palette, bg-light))
+=button-bordered($color: $c-gray-dark, $border-color: $c-gray-dark, $border-width: 2px, $border-radius: 4px, $bg-color: $c-bg-light)
   border: $border-width solid $border-color
   border-radius: $border-radius
   background-color: $bg-color
   color: $color
 
 
-=button-bordered-hover($color:#fff, $border-color:map-get($app-palette, dark-gray), $bg-color: map-get($app-palette, dark-gray))
+=button-bordered-hover($color: $c-text-light, $border-color:$c-gray-dark, $bg-color: $c-gray-dark)
 
   &:not(.stock-button_type_no-behavior):hover
     color: $color
@@ -36,7 +36,7 @@
     background-color: $bg-color
 
 
-=button-bordered-active($color: #fff, $border-color: map-get($app-palette, dark-gray), $bg-color: map-get($app-palette, dark-gray))
+=button-bordered-active($color: $c-text-light, $border-color: $c-gray-dark, $bg-color: $c-gray-dark)
 
   &#{$block}_state_active
     color: $color
@@ -92,7 +92,7 @@
 $block: ".deposits-button"
 
 #{$block}
-  $background-color: map-get($app-palette, dark-gray)
+  $background-color: $c-gray-dark
 
   +button-common($background-color: $background-color)
   +button-common-hover($background-color: $background-color)
@@ -114,7 +114,7 @@ $block: ".deposits-button"
   transition: all .3s
 
   &:hover
-    color: #FFF
+    color: $c-text-light
 
   &:focus
     outline: none
@@ -148,12 +148,12 @@ $block: ".deposits-button"
   &_state_disabled[disabled],
   &_state_disabled,
   &[disabled],
-    background-color: #ccc
+    background-color: $c-gray-light
     cursor: not-allowed
 
     &:hover,
     &:focus
-      background-color:#ccc
+      background-color: $c-gray-light
 
   // $Common button MOD: state visible
   &_state_visible
@@ -176,76 +176,76 @@ $block: ".deposits-button"
 
   // Color modifiers
   &_color_accent-blue
-    $background-color: map-get($app-palette, accent-blue)
+    $background-color: $c-accent-blue
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
   &_color_accent-red
-    $background-color: map-get($app-palette, accent-red)
+    $background-color: $c-accent-red
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
   &_color_accent-orange
-    $background-color: map-get($app-palette, accent-orange)
+    $background-color: $c-accent-orange
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
   &_color_accent-yellow
-    $background-color: map-get($app-palette, accent-yellow)
+    $background-color: $c-accent-yellow
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
   &_color_accent-green
-    $background-color: map-get($app-palette, accent-green)
+    $background-color: $c-accent-green
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
   &_color_accent-purple
-    $background-color: map-get($app-palette, accent-purple)
+    $background-color: $c-accent-purple
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
   &_color_accent-pink
-    $background-color: map-get($app-palette, accent-pink)
+    $background-color: $c-accent-pink
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
 
   // Border modifiers
   &_border_accent-blue
-    +button-bordered($color: map-get($app-palette, accent-blue), $bg-color: transparent, $border-color: map-get($app-palette, accent-blue))
-    +button-bordered-hover($color: #fff, $bg-color: map-get($app-palette, accent-blue), $border-color: map-get($app-palette, accent-blue))
-    +button-bordered-active($color: #fff, $bg-color: map-get($app-palette, accent-blue), $border-color: map-get($app-palette, accent-blue))
+    +button-bordered($color: $c-accent-blue, $bg-color: transparent, $border-color: $c-accent-blue)
+    +button-bordered-hover($color: $c-text-light, $bg-color: $c-accent-blue, $border-color: $c-accent-blue)
+    +button-bordered-active($color: $c-text-light, $bg-color: $c-accent-blue, $border-color: $c-accent-blue)
 
   &_border_accent-red
-    +button-bordered($color: map-get($app-palette, accent-red), $bg-color: transparent, $border-color: map-get($app-palette, accent-red))
-    +button-bordered-hover($color: #fff, $bg-color: map-get($app-palette, accent-red), $border-color: map-get($app-palette, accent-red))
-    +button-bordered-active($color: #fff, $bg-color: map-get($app-palette, accent-red), $border-color: map-get($app-palette, accent-red))
+    +button-bordered($color: $c-accent-red, $bg-color: transparent, $border-color: $c-accent-red)
+    +button-bordered-hover($color: $c-text-light, $bg-color: $c-accent-red, $border-color: $c-accent-red)
+    +button-bordered-active($color: $c-text-light, $bg-color: $c-accent-red, $border-color: $c-accent-red)
 
   &_border_accent-orange
-    +button-bordered($color: map-get($app-palette, accent-orange), $bg-color: transparent, $border-color: map-get($app-palette, accent-orange))
-    +button-bordered-hover($color: #fff, $bg-color: map-get($app-palette, accent-orange), $border-color: map-get($app-palette, accent-orange))
-    +button-bordered-active($color: #fff, $bg-color: map-get($app-palette, accent-orange), $border-color: map-get($app-palette, accent-orange))
+    +button-bordered($color: $c-accent-orange, $bg-color: transparent, $border-color: $c-accent-orange)
+    +button-bordered-hover($color: $c-text-light, $bg-color: $c-accent-orange, $border-color: $c-accent-orange)
+    +button-bordered-active($color: $c-text-light, $bg-color: $c-accent-orange, $border-color: $c-accent-orange)
 
   &_border_accent-yellow
-    +button-bordered($color: map-get($app-palette, accent-yellow), $bg-color: transparent, $border-color: map-get($app-palette, accent-yellow))
-    +button-bordered-hover($color: #fff, $bg-color: map-get($app-palette, accent-yellow), $border-color: map-get($app-palette, accent-yellow))
-    +button-bordered-active($color: #fff, $bg-color: map-get($app-palette, accent-yellow), $border-color: map-get($app-palette, accent-yellow))
+    +button-bordered($color: $c-accent-yellow, $bg-color: transparent, $border-color: $c-accent-yellow)
+    +button-bordered-hover($color: $c-text-light, $bg-color: $c-accent-yellow, $border-color: $c-accent-yellow)
+    +button-bordered-active($color: $c-text-light, $bg-color: $c-accent-yellow, $border-color: $c-accent-yellow)
 
   &_border_accent-green
-    +button-bordered($color: map-get($app-palette, accent-green), $bg-color: transparent, $border-color: map-get($app-palette, accent-green))
-    +button-bordered-hover($color: #fff, $bg-color: map-get($app-palette, accent-green), $border-color: map-get($app-palette, accent-green))
-    +button-bordered-active($color: #fff, $bg-color: map-get($app-palette, accent-green), $border-color: map-get($app-palette, accent-green))
+    +button-bordered($color: $c-accent-green, $bg-color: transparent, $border-color: $c-accent-green)
+    +button-bordered-hover($color: $c-text-light, $bg-color: $c-accent-green, $border-color: $c-accent-green)
+    +button-bordered-active($color: $c-text-light, $bg-color: $c-accent-green, $border-color: $c-accent-green)
 
   &_border_accent-purple
-    +button-bordered($color: map-get($app-palette, accent-purple), $bg-color: transparent, $border-color: map-get($app-palette, accent-purple))
-    +button-bordered-hover($color: #fff, $bg-color: map-get($app-palette, accent-purple), $border-color: map-get($app-palette, accent-purple))
-    +button-bordered-active($color: #fff, $bg-color: map-get($app-palette, accent-purple), $border-color: map-get($app-palette, accent-purple))
+    +button-bordered($color: $c-accent-purple, $bg-color: transparent, $border-color: $c-accent-purple)
+    +button-bordered-hover($color: $c-text-light, $bg-color: $c-accent-purple, $border-color: $c-accent-purple)
+    +button-bordered-active($color: $c-text-light, $bg-color: $c-accent-purple, $border-color: $c-accent-purple)
 
   &_border_accent-pink
-    +button-bordered($color: map-get($app-palette, accent-pink), $bg-color: transparent, $border-color: map-get($app-palette, accent-pink))
-    +button-bordered-hover($color: #fff, $bg-color: map-get($app-palette, accent-pink), $border-color: map-get($app-palette, accent-pink))
-    +button-bordered-active($color: #fff, $bg-color: map-get($app-palette, accent-pink), $border-color: map-get($app-palette, accent-pink))
+    +button-bordered($color: $c-accent-pink, $bg-color: transparent, $border-color: $c-accent-pink)
+    +button-bordered-hover($color: $c-text-light, $bg-color: $c-accent-pink, $border-color: $c-accent-pink)
+    +button-bordered-active($color: $c-text-light, $bg-color: $c-accent-pink, $border-color: $c-accent-pink)
 
 
 
@@ -255,7 +255,7 @@ $block: ".deposits-button"
     +button-with-icon-left($icon: '\e90a')
 
   &_icon_plus#{&}_border_accent-blue
-    +button-with-icon-left($icon: '\e90a', $icon-color: map-get($app-palette, accent-blue), $icon-hover-color: #fff, $icon-active-color: #fff)
+    +button-with-icon-left($icon: '\e90a', $icon-color: $c-accent-blue, $icon-hover-color: $c-text-light, $icon-active-color: $c-text-light)
 
   // $Common button MOD: icon zoom plus
   &_icon_zoom-plus

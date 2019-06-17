@@ -17,7 +17,7 @@ $block: ".deposits-modal"
 #{$block}
   position: relative
   display: block
-  background-color: map-get($app-palette, bg-light)
+  background-color: $c-bg-light
   border-radius: 10px
   overflow: hidden
   width: 95%
@@ -52,7 +52,7 @@ $block: ".deposits-modal"
   &__footer
     width: 100%
     padding: 30px 20px
-    background-color: map-get($app-palette, bg-secondary)
+    background-color: $c-gray-hyper-light
     text-align: center
 
     @media screen and (max-width: 960px)
@@ -118,7 +118,7 @@ $block: ".deposits-modal"
     font-size: 30px
     line-height: 1
     font-weight: 600
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     text-align: center
 
     &:last-child
@@ -130,7 +130,7 @@ $block: ".deposits-modal"
     font-family: $f-sans
     font-size: 20px
     line-height: 1.5
-    color: map-get($app-palette, text-secondary)
+    color: $c-text-secondary
     font-weight: 400
 
     @media screen and (max-width: 960px)
@@ -146,7 +146,7 @@ $block: ".deposits-modal"
     font-family: $f-sans
     font-size: 14px
     line-height: 1.5
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     font-weight: 400
 
     &_size_extra
@@ -159,7 +159,7 @@ $block: ".deposits-modal"
     font-size: 16px
     line-height: 1
     font-weight: 400
-    color: map-get($app-palette, text-secondary)
+    color: $c-text-secondary
     text-decoration: none
     opacity: 1
     transition: all .3s

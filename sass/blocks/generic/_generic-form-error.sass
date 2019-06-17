@@ -15,7 +15,7 @@ $block: ".generic-form-error"
   display: block
   position: relative
   padding: 8px 10px 8px 30px
-  background-color: map-get($app-palette, accent-red)
+  background-color: $c-accent-red
   border-radius: 2px
 
   // $Generic form error message MOD: position above
@@ -51,7 +51,7 @@ $block: ".generic-form-error"
     &:after
       top: 100%
       left: 15px
-      border-top: 5px solid map-get($app-palette, accent-red)
+      border-top: 5px solid $c-accent-red
       border-right: 5px solid transparent
       border-left: 5px solid transparent
 
@@ -67,7 +67,7 @@ $block: ".generic-form-error"
     &:after
       top: 100%
       right: 15px
-      border-top: 5px solid map-get($app-palette, accent-red)
+      border-top: 5px solid $c-accent-red
       border-right: 5px solid transparent
       border-left: 5px solid transparent
 
@@ -83,7 +83,7 @@ $block: ".generic-form-error"
     &:after
       bottom: 100%
       left: 15px
-      border-bottom: 5px solid map-get($app-palette, accent-red)
+      border-bottom: 5px solid $c-accent-red
       border-right: 5px solid transparent
       border-left: 5px solid transparent
 
@@ -96,7 +96,7 @@ $block: ".generic-form-error"
     &:after
       bottom: 100%
       right: 15px
-      border-bottom: 5px solid map-get($app-palette, accent-red)
+      border-bottom: 5px solid $c-accent-red
       border-right: 5px solid transparent
       border-left: 5px solid transparent
 
@@ -111,7 +111,7 @@ $block: ".generic-form-error"
     font-size: 10px
     line-height: 1
     font-weight: 400
-    color: map-get($app-palette, text-light)
+    color: $c-text-light
 
     #{$block}_role_general &
       top: 18px
@@ -129,7 +129,7 @@ $block: ".generic-form-error"
     font-family: $f-generic
     font-size: 12px
     font-weight: 400
-    color: map-get($app-palette, text-light)
+    color: $c-text-light
 
     #{$block}_tooltip &
       font-size: 11px

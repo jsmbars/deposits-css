@@ -26,8 +26,8 @@ $block: ".generic-button"
   outline: none
   cursor: pointer
   border: none
-  background-color: map-get($app-palette, dark-gray)
-  color: #fff
+  background-color: $c-gray-dark
+  color: $c-text-light
   transition: all .3s
 
   &:hover
@@ -40,12 +40,12 @@ $block: ".generic-button"
   &_state_disabled[disabled],
   &_state_disabled,
   &[disabled],
-    background-color: #ccc
+    background-color: $c-gray-light
     cursor: not-allowed
 
     &:hover,
     &:focus
-      background-color:#ccc
+      background-color: $c-gray-light
 
 
   // $Generic button text

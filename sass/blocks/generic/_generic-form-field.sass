@@ -30,7 +30,7 @@ $block: ".generic-form-field"
     margin-bottom: 10px
     font-family: $f-generic
     font-size: 14px
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
     font-weight: 600
     line-height: 1
 
@@ -56,79 +56,79 @@ $block: ".generic-form-field"
       padding: 10px
       font-family: $f-generic
       font-size: 14px
-      color: map-get($app-palette, text-primary)
+      color: $c-text-primary
       font-weight: 400
       line-height: 1.5
-      background-color: map-get($app-palette, bg-light)
-      border: 1px solid map-get($app-palette, border-primary)
+      background-color: $c-bg-light
+      border: 1px solid $c-border-primary
       border-radius: 2px
       appearance: none
       -moz-appearance: none
       -webkit-appearance: none
 
       #{$block}_state_error &
-        border-color: map-get($app-palette, accent-red)
-        color: map-get($app-palette, accent-red)
+        border-color: $c-accent-red
+        color: $c-accent-red
 
       &:invalid
         box-shadow: none
 
       &:focus
         outline: none
-        box-shadow: 0 0 4px -1px map-get($app-palette, light-gray)
+        box-shadow: 0 0 4px -1px $c-gray-light
 
       &:disabled
-        background-color: map-get($app-palette, bg-secondary)
+        background-color: $c-bg-secondary
         cursor: not-allowed
 
       &::-webkit-input-placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &:-moz-placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &::-moz-placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &:-ms-input-placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &::-ms-input-placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &::placeholder
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
       &:placeholder-shown
-        color: map-get($app-palette, text-faded) !important
+        color: $c-text-faded !important
         opacity:  1 !important
 
         #{$block}_state_error &
-          color: map-get($app-palette, accent-red) !important
+          color: $c-accent-red !important
 
 
   // $Generic form field note
@@ -141,7 +141,7 @@ $block: ".generic-form-field"
     font-size: 14px
     line-height: 1
     font-weight: 400
-    color: map-get($app-palette, text-primary)
+    color: $c-text-primary
 
 
   // $Generic form field note line
