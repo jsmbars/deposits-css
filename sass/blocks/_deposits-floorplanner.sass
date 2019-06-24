@@ -1,0 +1,500 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Floor planner
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".deposits-floorplanner"
+
+#{$block}
+  position: relative
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: stretch
+  width: 100%
+  background-color: $c-bg-light
+  user-select: none
+
+  // $Floor planner MOD: page table-planner
+  &_page_table-planner
+
+  // $Floor planner MOD: page floor-plan-editor
+  &_page_floor-plan-editor
+
+
+  // $Floor planner overlay
+  &__overlay
+    position: absolute
+    z-index: 5
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    padding: 10px
+    background-color: transparentize($c-gray-dark, .6)
+
+
+  // $Floor planner overlay content
+  &__overlay-content
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
+    text-align: center
+    overflow: hidden
+
+
+  // $Floor planner overlay text
+  &__overlay-text
+    display: block
+    width: 100%
+    max-width: 100%
+    font-family: $f-sans
+    font-size: 20px
+    line-height: 1.2
+    color: $c-text-light
+    text-align: center
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+
+  // $Floor planner overlay text line
+  &__overlay-text-line
+    display: block
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+
+  // $Floor planner overlay text bold
+  &__overlay-text-bold
+    font-weight: 600
+
+
+  // $Floor planner overlay button
+  &__overlay-button
+
+
+  // $Floor planner preview
+  &__preview
+    display: block
+    width: 100%
+    max-width: 100%
+
+
+  // $Floor planner main
+  &__main
+    position: relative
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    width: calc(100% - 380px)
+    padding: 30px
+
+    @media screen and (max-width: 1280px)
+      width: calc(100% - 360px)
+      padding: 20px
+
+
+  // $Floor planner sidebar
+  &__sidebar
+    position: relative
+    flex-grow: 0
+    flex-shrink: 0
+    display: block
+    width: 380px
+    padding: 30px
+    border-left: 1px solid $c-border-primary
+
+    @media screen and (max-width: 1280px)
+      width: 360px
+      padding: 20px
+
+
+  // $Floor planner legend
+  &__legend
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 30px
+
+
+  // $Floor planner plan
+  &__plan
+    display: block
+    width: 100%
+    padding-bottom: 15px
+    overflow-y: hidden
+    overflow-x: auto
+
+    &:not(:last-child)
+      margin-bottom: 30px
+
+
+  // $Floor planner plan content
+  &__plan-content
+    position: relative
+    display: block
+    width: 100%
+    min-width: 760px
+
+
+  // $Floor planner blueprint
+  &__blueprint
+    position: relative
+    z-index: 0
+    display: block
+    width: 100%
+    max-width: 100%
+
+
+  // $Floor planner grid
+  &__grid
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 1
+    display: block
+    width: 100%
+    background: linear-gradient(to left, $c-gray-extra-light 1px, transparent 1px), linear-gradient(to top, $c-gray-extra-light 1px, transparent 1px), linear-gradient(to left, transparentize($c-gray-extra-light, .5) 1px, transparent 1px), linear-gradient(to top, transparentize($c-gray-extra-light, .5) 1px, transparent 1px)
+    background-size: 50px 50px, 50px 50px, 5px 5px, 5px 5px
+    background-position: 1px 1px, 1px 1px
+
+
+  // $Floor planner tables
+  &__tables
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 2
+    display: block
+    width: 100%
+
+
+  // $Floor planner table
+  &__table
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 3
+    display: block
+    width: 75px
+    height: 75px
+    border: 2px solid $c-gray-extra-light
+    background-color: $c-gray-ultra-light
+    transition: all .3s
+
+    // $Floor planner table MOD: state empty
+    &_state_empty
+      background-color: $c-gray-ultra-light
+      border-color: $c-gray-extra-light
+
+    // $Floor planner table MOD: state booked
+    &_state_booked
+      background-color: $c-accent-yellow-light
+      border-color: $c-accent-yellow-medium
+
+    // $Floor planner table MOD: state selected
+    &_state_selected
+      background-color: $c-accent-blue-light
+      border-color: $c-accent-blue-medium
+      cursor: default
+
+    // $Floor planner table MOD: type selectable
+    &_type_selectable
+      cursor: pointer
+
+      &:hover
+        background-color: $c-accent-blue-light
+        border-color: $c-accent-blue-medium
+
+    // $Floor planner table MOD: type editable
+    &_type_editable
+      border-color: $c-accent-blue
+      border-style: dotted
+      cursor: move
+
+      &:hover
+        background-color: $c-accent-blue-light
+        border-color: $c-accent-blue
+
+    // $Floor planner table MOD: state drag-resize
+    &_state_drag-resize
+      z-index: 5
+      background-color: $c-accent-blue-light
+      border-color: $c-accent-blue
+      border-style: solid
+
+    // $Floor planner table MOD: state drop allowed
+    &_state_drop-allowed
+      background-color: $c-accent-blue-light
+      border-color: $c-accent-blue
+      border-style: dashed
+      cursor: default
+
+      &:hover
+        background-color: $c-accent-blue-light
+        border-color: $c-accent-blue
+
+    // $Floor planner table MOD: state drop enter
+    &_state_drop-allowed#{&}_state_drop-enter
+      background-color: $c-accent-green-medium
+      border-color: $c-accent-green
+
+    // $Floor planner table MOD: state drop not allowed
+    &_state_drop-not-allowed
+      background-color: $c-accent-red-light
+      border-color: $c-accent-red
+      border-style: dashed
+      cursor: not-allowed
+
+      &:hover
+        background-color: $c-accent-red-light
+        border-color: $c-accent-red
+
+    &_state_drop-not-allowed#{&}_state_drop-enter
+      background-color: $c-accent-red-medium
+      border-color: $c-accent-red
+
+    // $Floor planner table MOD: state drop success
+    // $Floor planner table MOD: state drop failure
+    &_state_drop-success,
+    &_state_drop-failure
+      border-style: solid
+      cursor: default
+
+      &:after
+        content: '\e914'
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        font-family: icons
+        font-size: 40px
+        line-height: 1
+        text-align: center
+
+    &_state_drop-success
+      border-color: $c-accent-green
+      background-color: $c-accent-green-light
+
+      &:after
+        content: '\e914'
+        color: $c-accent-green
+        background-color: $c-accent-green-light
+
+      &:hover
+        border-color: $c-accent-green
+        background-color: $c-accent-green-light
+
+    &_state_drop-failure
+      border-color: $c-accent-red
+      background-color: $c-accent-red-light
+
+      &:after
+        content: '\e920'
+        color: $c-accent-red
+        background-color: $c-accent-red-light
+
+      &:hover
+        border-color: $c-accent-red
+        background-color: $c-accent-red-light
+
+
+  // $Floor planner table action
+  &__table-action
+    position: absolute
+    z-index: 4
+    display: block
+    width: 30px
+    height: 30px
+    background-color: $c-bg-light
+    border: 1px solid $c-accent-blue
+    border-radius: 50%
+    cursor: pointer
+    transition: all .3s
+
+    &:before
+      content: ''
+      display: block
+      font-family: icons
+      font-size: 14px
+      line-height: 26px
+      color: $c-text-primary
+      text-align: center
+      transition: all .3s
+
+    // $Floor planner table action MOD: role edit
+    &_role_edit
+      top: 0
+      left: 0
+      margin-top: -15px
+      margin-left: -15px
+
+      &:before
+        content: '\e91d'
+
+      &:hover
+        background-color: $c-accent-orange
+
+        &:before
+          color: $c-text-light
+
+    // $Floor planner table action MOD: role delete
+    &_role_delete
+      top: 0
+      right: 0
+      margin-top: -15px
+      margin-right: -15px
+
+      &:before
+        content: '\e909'
+        font-size: 18px
+
+      &:hover
+        background-color: $c-accent-red
+
+        &:before
+          color: $c-text-light
+
+
+  // $Floor planner table content
+  &__table-content
+    position: absolute
+    top: 50%
+    left: 50%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    transform: translate(-50%, -50%)
+
+
+  // $Floor planner table info
+  &__table-info
+    display: block
+    width: 100%
+    text-align: center
+
+
+  // $Floor planner table text
+  &__table-text
+    display: block
+    font-family: $f-sans
+    font-size: 13px
+    line-height: 1
+    font-weight: 400
+    color: $c-text-primary
+    white-space: nowrap
+
+    &:not(:last-child)
+      margin-bottom: 6px
+
+
+  // $Floor planner table text bold
+  &__table-text-bold
+    font-weight: 600
+
+
+  // $Floor planner table text extra bold
+  &__table-text-extra-bold
+    font-weight: 800
+
+
+  // $Floor planner table text light
+  &__table-text-light
+    font-weight: 300
+
+
+  // $Floor planner table text meta
+  &__table-text-meta
+    display: block
+    margin-top: 3px
+    font-size: 12px
+    font-weight: 400
+    color: $c-text-secondary
+
+
+  // $Floor planner form
+  &__form
+    display: block
+    width: 100%
+
+
+  // $Floor planner info
+  &__info
+    display: block
+    width: 100%
+
+
+  // $Floor planner info header
+  &__info-header
+    display: block
+    width: 100%
+    padding-top: 40px
+    padding-bottom: 20px
+    flex-grow: 0
+    flex-shrink: 0
+
+
+  // $Floor planner info title
+  &__info-title
+    display: block
+    font-family: $f-sans
+    font-size: 20px
+    line-height: 1
+    font-weight: 600
+    text-align: center
+
+
+  // $Floor planner info title meta
+  &__info-title-meta
+    color: $c-text-secondary
+    font-weight: 400
+
+
+  // $Floor planner info content
+  &__info-content
+    display: block
+    width: 100%
+
+
+  // $Floor planner info panel
+  &__info-panel
+    position: relative
+    z-index: 5
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+    // $Floor planner info panel MOD: drop allowed
+    &_state_drop-allowed
+      opacity: .6
+
+    // $Floor planner info panel MOD: drop not allowed
+    &_state_drop-not-allowed
+      cursor: not-allowed !important

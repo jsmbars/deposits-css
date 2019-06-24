@@ -1,0 +1,58 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Loading spinner
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".deposits-spinner"
+
+#{$block}
+  display: block
+  width: 60px
+  height: 60px
+  margin: 0 auto
+  background-image: url('../images/spinner.svg')
+  background-repeat: no-repeat
+  background-size: contain
+  background-position: center center
+
+  // Use gif icon in Edge
+  @supports (-ms-ime-align: auto)
+    background-image: url('../images/spinner.gif')
+
+  // Use gif icon in IE11
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+    background-image: url('../images/spinner.gif')
+
+  // $Loading spinner MOD: size xs
+  &_size_xs
+    width: 20px
+    height: 20px
+
+  // $Loading spinner MOD: size s
+  &_size_s
+    width: 40px
+    height: 40px
+
+  // $Loading spinner MOD: size m
+  &_size_m
+    width: 60px
+    height: 60px
+
+  // $Loading spinner MOD :size l
+  &_size_l
+    width: 80px
+    height: 80px
+
+  // $Loading spinner MOD :size xl
+  &_size_xl
+    width: 100px
+    height: 100px
