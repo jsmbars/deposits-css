@@ -125,6 +125,10 @@ $block: ".deposits-form"
 
   // $Common form board header
   &__board-header
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
     padding: 15px 25px
     background-color: $c-bg-secondary
 
@@ -144,6 +148,37 @@ $block: ".deposits-form"
     color: $c-text-primary
 
 
+  // $Common form board switch
+  &__board-switch
+    position: relative
+    display: block
+    width: 30px
+    height: 30px
+    cursor: pointer
+
+    &:before
+      content: '\e91a'
+      position: absolute
+      top: 50%
+      left: 50%
+      display: block
+      font-family: icons
+      font-size: 30px
+      line-height: 1
+      color: $c-text-primary
+      transform: translate(-50%,-50%)
+      transition: all, .3s
+
+    &:hover
+      &:before
+        color: $c-text-secondary
+
+    // $Common form board switch MOD: state closed
+    &_state_closed
+      &:before
+        content: '\e919'
+
+
   // $Common form board content
   &__board-content
     padding: 15px 25px 25px
@@ -156,6 +191,72 @@ $block: ".deposits-form"
       display: block
 
     // $Common form board content MOD: state hidden
+    &_state_hidden
+      display: none
+
+
+  // $Common form dropdown
+  &__dropdown
+    display: block
+    width: 100%
+
+
+  // $Common form dropdown header
+  &__dropdown-header
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    padding: 0 10px 15px
+    border-bottom: 1px solid $c-border-primary
+
+
+  // $Common form dropdown title
+  &__dropdown-title
+    font-size: 16px
+    line-height: 1
+    font-family: $f-sans
+    font-weight: 400
+    color: $c-text-primary
+
+
+  // $Common form dropdown switch
+  &__dropdown-switch
+    position: relative
+    display: block
+    width: 20px
+    height: 20px
+    cursor: pointer
+
+    &:before
+      content: '\e922'
+      display: block
+      font-family: icons
+      font-size: 20px
+      line-height: 20px
+      color: $c-text-primary
+      transition: all, .3s
+
+    &:hover
+      &:before
+        color: $c-text-secondary
+
+    // $Common form dropdown switch MOD: state closed
+    &_state_closed
+      &:before
+        content: '\e921'
+
+
+  // $Common form dropdown content
+  &__dropdown-content
+    padding: 20px 10px
+    border-bottom: 1px solid $c-border-primary
+
+    // $Common form dropdown content MOD: state visible
+    &_state_visible
+      display: block
+
+    // $Common form dropdown content MOD: state hidden
     &_state_hidden
       display: none
 
@@ -307,6 +408,11 @@ $block: ".deposits-form"
 
       &:not(:last-child)
         margin-right: 20px
+
+    &_size_full
+      flex-grow: 1
+      flex-shrink: 1
+      width: 100%
 
 
 
