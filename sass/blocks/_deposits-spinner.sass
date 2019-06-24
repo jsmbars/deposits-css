@@ -24,6 +24,14 @@ $block: ".deposits-spinner"
   background-size: contain
   background-position: center center
 
+  // Use gif icon in Edge
+  @supports (-ms-ime-align: auto)
+    background-image: url('../images/spinner.gif')
+
+  // Use gif icon in IE11
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+    background-image: url('../images/spinner.gif')
+
   // $Loading spinner MOD: size xs
   &_size_xs
     width: 20px
