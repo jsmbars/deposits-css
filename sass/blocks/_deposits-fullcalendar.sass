@@ -91,9 +91,7 @@ $block: ".deposits-fullcalendar"
     background-color: $c-accent-blue
 
   & .fc-event:hover
-    background-color: $c-bg-light
-    color: $c-accent-blue
-    font-weight: 400
+    opacity: .8
 
   & .fc-day-grid-event
     margin: 0 4px 8px
@@ -118,7 +116,10 @@ $block: ".deposits-fullcalendar"
     border-color: $c-border-primary
 
   &.fc-unthemed td.fc-today
-    background: lighten($c-accent-yellow, 25)
+    background: $c-accent-yellow-light
+
+  &.fc-unthemed td.fc-selected
+    background: $c-accent-blue-light
 
   &.fc-unthemed .fc-disabled-day
     background: $c-bg-secondary
