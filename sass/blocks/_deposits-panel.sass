@@ -32,9 +32,7 @@ $block: ".deposits-panel"
     &:hover
       opacity: 1
 
-  &_page_calendar-daily-view
-    width: auto
-    margin: 20px 20px 5px
+  &_page_calendar-weekly-view
     border: 1px solid $c-border-light
     border-radius: 8px
     box-shadow: 0 5px 15px 0 $c-shadow-secondary
@@ -43,15 +41,15 @@ $block: ".deposits-panel"
     background-color: $c-accent-blue-light
     border: 1px solid $c-accent-blue-medium
 
-  &_page_calendar-daily-view#{&}_role_enquiry
+  &_page_calendar-weekly-view#{&}_role_enquiry
     border-color: #FFB147
     background-color: #fff4e4
 
-  &_page_calendar-daily-view#{&}_role_booking
+  &_page_calendar-weekly-view#{&}_role_booking
     border-color: #428BCA
     background-color: #ebf2f9
 
-  &_page_calendar-daily-view#{&}_role_deposit
+  &_page_calendar-weekly-view#{&}_role_deposit
     border-color: #14BA29
     background-color: #e4fce7
 
@@ -66,7 +64,7 @@ $block: ".deposits-panel"
     width: 100%
     padding: 20px
 
-    #{$block}_page_calendar-daily-view &
+    #{$block}_page_calendar-weekly-view &
       padding: 15px 20px 10px
 
     #{$block}_page_table-planner &
@@ -138,7 +136,7 @@ $block: ".deposits-panel"
 
   // $Panel header action
   &__header-action
-    #{$block}_page_calendar-daily-view &
+    #{$block}_page_calendar-weekly-view &
       height: auto
       padding: 8px 16px
 

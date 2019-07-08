@@ -88,6 +88,16 @@ $block: ".deposits-page-main"
     @media screen and (max-width: 1280px)
       padding: 20px
 
+    // $Page main group MOD: space above
+    &_space_above
+      &:not(:first-child)
+        margin-top: 30px
+
+    // $Page main group MOD: space below
+    &_space_below
+      &:not(:last-child)
+        margin-bottom: 30px
+
 
   // $Page main info area
   &__info

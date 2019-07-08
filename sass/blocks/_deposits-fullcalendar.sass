@@ -116,7 +116,10 @@ $block: ".deposits-fullcalendar"
     border-color: $c-border-primary
 
   &.fc-unthemed td.fc-today
-    background: lighten($c-accent-yellow, 25)
+    background: $c-accent-yellow-light
+
+  &.fc-unthemed td.fc-selected
+    background: $c-accent-blue-light
 
   &.fc-unthemed .fc-disabled-day
     background: $c-bg-secondary
