@@ -18,6 +18,16 @@ $block: ".deposits-form"
   display: block
   width: 100%
 
+
+  // $Common form scroll
+  &__scroll
+    display: block
+    width: 100%
+    overflow: hidden
+
+    &_type_horizontal
+      overflow-x: auto
+
   // $Common form group
   &__group
     position: relative
@@ -266,7 +276,7 @@ $block: ".deposits-form"
     display: flex
     flex-direction: row
     justify-content: flex-start
-    align-items: center
+    align-items: flex-start
     width: 100%
     margin-bottom: 30px
 
