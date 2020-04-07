@@ -29,6 +29,10 @@ $block: ".deposits-table"
   // $Common table MOD: role selected customers
   &_role_selected-customers
 
+  // $Common table MOD: role deposits
+  &_role_deposits
+    min-width: 800px
+
 
   // $Common table group
   &__group
@@ -95,6 +99,12 @@ $block: ".deposits-table"
     &_state_alert:nth-child(even)
       background-color: lighten($c-accent-red, 20)
 
+    // $Common table row MOD: state edit
+    &_state_edit,
+    &_state_edit:nth-child(odd),
+    &_state_edit:nth-child(even)
+      box-shadow: inset 0 0 0 2px $c-accent-orange
+
 
   // Backported table row highlights
   &-row__enquiry:hover
@@ -134,7 +144,8 @@ $block: ".deposits-table"
     #{$block}_type_common #{$block}__row:last-child &
       border-bottom: none
 
-    #{$block}_role_bookings &
+    #{$block}_role_bookings &,
+    #{$block}_role_deposits &
       padding-left: 10px
       padding-right: 10px
 
@@ -143,16 +154,47 @@ $block: ".deposits-table"
 
     // $Common table cell first column
     &:nth-child(1)
+      #{$block}_role_deposits &
+        width: 24%
 
+    // $Common table cell second column
     &:nth-child(2)
       #{$block}_role_package-editor &
         text-align: center
+
+      #{$block}_role_deposits &
+        width: 19%
+
+    // $Common table cell third column
+    &:nth-child(3)
+      #{$block}_role_deposits &
+        width: 19%
+
+    // $Common table cell fourth column
+    &:nth-child(4)
+      #{$block}_role_deposits &
+        width: 24%
+
+    // $Common table cell fifth column
+    &:nth-child(5)
+      #{$block}_role_deposits &
+        width: 14%
 
     // $Common table cell MOD: role header
     // $Common table cell MOD: role footer
     &_role_header,
     &_role_footer
       font-weight: 600
+
+    &_role_footer:nth-child(1)
+      #{$block}_role_deposits &
+        width: 43%
+        border-right: none
+
+    &_role_footer:nth-child(2)
+      #{$block}_role_deposits &
+        width: 57%
+
 
     &_no-border
       &:not(:last-child)
@@ -196,3 +238,12 @@ $block: ".deposits-table"
 
   // $Common table action
   &__action
+
+
+  &__placeholder
+    padding: 10px 15px
+
+    #{$block}_role_bookings &,
+    #{$block}_role_deposits &
+      padding-left: 10px
+      padding-right: 10px
