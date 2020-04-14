@@ -57,6 +57,10 @@
     font-weight: normal
     vertical-align: middle
 
+  &:empty
+    &:before
+      margin-right: 0
+
   &:hover
     &:before
       color: $icon-hover-color
@@ -78,6 +82,10 @@
     color: $icon-color
     font-weight: normal
     vertical-align: middle
+
+  &:empty
+    &:after
+      margin-left: 0
 
   &:hover
     &:after
@@ -124,17 +132,29 @@ $block: ".deposits-button"
     padding: 14px 28px
     font-size: 16px
 
+    &:empty
+      padding: 14px
+
   // $Common button MOD: size medium
   &_size_m
     padding: 12px 24px
+
+    &:empty
+      padding: 12px
 
   // $Common button MOD: size small
   &_size_s
     padding: 10px 20px
 
+    &:empty
+      padding: 10px
+
   // $Common button MOD: size extra small
   &_size_xs
     padding: 8px 16px
+
+    &:empty
+      padding: 8px
 
   // $Common button MOD: space left
   &_space_left

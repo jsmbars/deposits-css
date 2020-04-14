@@ -155,7 +155,7 @@ $block: ".deposits-table"
     // $Common table cell first column
     &:nth-child(1)
       #{$block}_role_deposits &
-        width: 24%
+        width: 22%
 
     // $Common table cell second column
     &:nth-child(2)
@@ -163,17 +163,17 @@ $block: ".deposits-table"
         text-align: center
 
       #{$block}_role_deposits &
-        width: 19%
+        width: 18%
 
     // $Common table cell third column
     &:nth-child(3)
       #{$block}_role_deposits &
-        width: 19%
+        width: 24%
 
     // $Common table cell fourth column
     &:nth-child(4)
       #{$block}_role_deposits &
-        width: 24%
+        width: 22%
 
     // $Common table cell fifth column
     &:nth-child(5)
@@ -188,12 +188,12 @@ $block: ".deposits-table"
 
     &_role_footer:nth-child(1)
       #{$block}_role_deposits &
-        width: 43%
+        width: 40%
         border-right: none
 
     &_role_footer:nth-child(2)
       #{$block}_role_deposits &
-        width: 57%
+        width: 60%
 
 
     &_no-border
@@ -216,7 +216,9 @@ $block: ".deposits-table"
     font-weight: 300
     color: $c-text-primary
 
-    & > b
+    & > b,
+    #{$block}__cell_role_header &,
+    #{$block}__cell_role_footer &
       font-weight: 600
 
     // $Common table text MOD: adjust no wrap
@@ -229,6 +231,18 @@ $block: ".deposits-table"
       word-wrap: break-word
       word-break: break-word
       hyphens: auto
+
+    // $Common table text accent red
+  &__text-accent-red
+    color: $c-accent-red
+
+    // $Common table text accent green
+  &__text-accent-green
+    color: $c-accent-green
+
+    // $Common table text accent blue
+  &__text-accent-blue
+    color: $c-accent-blue
 
 
   // $Common table actions
