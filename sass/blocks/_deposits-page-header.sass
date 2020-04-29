@@ -22,6 +22,7 @@ $block: ".deposits-page-header"
   left: 0
   width: 100%
   height: 60px
+  padding: 0 40px
   background-color: $c-bg-light
   border-bottom: 1px solid $c-border-primary
 
@@ -43,6 +44,8 @@ $block: ".deposits-page-header"
   @media screen and (max-width: 480px)
     padding: 0 15px
 
+  &_adjust_full
+
 
   // $Page header inner
   &__inner
@@ -51,6 +54,9 @@ $block: ".deposits-page-header"
     width: 100%
     max-width: 1200px
     margin: 0 auto
+
+    #{$block}_adjust_full &
+      max-width: 100%
 
 
   // $Page header group
