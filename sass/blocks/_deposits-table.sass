@@ -25,6 +25,14 @@ $block: ".deposits-table"
 
   // $Common table MOD: role bookings table
   &_role_bookings
+    min-width: 1200px
+
+  // $Common table MOD: role bookings transactions table
+  &_role_booking-transactions
+    max-width: calc(100% - 240px)
+
+    @media screen and (max-width: 1600px)
+      max-width: calc(100% - 220px)
 
   // $Common table MOD: role selected customers
   &_role_selected-customers
@@ -42,6 +50,71 @@ $block: ".deposits-table"
 
     &:nth-child(odd)
       background-color: $c-bg-secondary
+
+    &_role_enquiry,
+    &_role_enquiry:nth-child(odd)
+      background-color: $c-accent-orange-medium
+
+    &_role_booking,
+    &_role_booking:nth-child(odd)
+      background-color: $c-accent-blue-medium
+
+    &_role_deposit,
+    &_role_deposit:nth-child(odd)
+      background-color: $c-accent-green-medium
+
+
+  // $Common table dropdown
+  &__dropdown
+    position: relative
+    padding: 20px 20px 60px
+    border-bottom: 1px solid $c-border-primary
+
+    #{$block}_role_bookings &
+      background-color: #fff
+
+    // $Common table dropdown MOD: state hidden
+    &_state_hidden
+      display: none
+
+
+  // $Common table dropdown close
+  &__dropdown-close
+    position: absolute
+    bottom: 20px
+    left: 20px
+    z-index: 10
+    display: block
+    width: 20px
+    height: 20px
+    font-size: 0
+    line-height: 0
+    color: transparent
+    outline: none
+    background-color: $c-gray-medium
+    border-radius: 50%
+    transition: all .4s
+    cursor: pointer
+
+    &:before
+      content: '\e91a'
+      display: block
+      font-family: icons
+      font-size: 15px
+      line-height: 16px
+      font-weight: 400
+      color: $c-text-light
+      text-align: center
+
+    @media screen and (max-width: 960px)
+      left: 50%
+      margin-left: -10px
+
+    &:hover
+      opacity: .8
+
+    &:focus
+      outline: $c-text-light
 
 
   // $Common table row
@@ -146,20 +219,40 @@ $block: ".deposits-table"
       border-bottom: none
 
     #{$block}_role_bookings &,
+    #{$block}_role_booking-transactions &,
     #{$block}_role_deposits &
       padding-left: 10px
       padding-right: 10px
+
+    @media screen and (max-width: 1600px)
+      #{$block}_role_bookings &
+        padding-left: 3px
+        padding-right: 3px
 
     &:not(:last-child)
       border-right: 1px solid $c-border-primary
 
     // $Common table cell first column
     &:nth-child(1)
+      #{$block}_role_bookings &
+        width: 7%
+        min-width: 90px
+
+      #{$block}_role_booking-transactions &
+        width: 20%
+
       #{$block}_role_deposits &
         width: 22%
 
     // $Common table cell second column
     &:nth-child(2)
+      #{$block}_role_bookings &
+        width: 7%
+        min-width: 90px
+
+      #{$block}_role_booking-transactions &
+        width: 20%
+
       #{$block}_role_package-editor &
         text-align: center
 
@@ -168,18 +261,89 @@ $block: ".deposits-table"
 
     // $Common table cell third column
     &:nth-child(3)
+      #{$block}_role_bookings &
+        width: 12%
+
+      #{$block}_role_booking-transactions &
+        width: 30%
+
       #{$block}_role_deposits &
         width: 24%
 
     // $Common table cell fourth column
     &:nth-child(4)
+      #{$block}_role_bookings &
+        width: 5%
+        min-width: 75px
+
+      #{$block}_role_booking-transactions &
+        width: 30%
+
       #{$block}_role_deposits &
         width: 22%
 
     // $Common table cell fifth column
     &:nth-child(5)
+      #{$block}_role_bookings &
+        width: 8%
+
       #{$block}_role_deposits &
         width: 14%
+
+    // $Common table cell sixth column
+    &:nth-child(6)
+      #{$block}_role_bookings &
+        width: 8%
+
+    // $Common table cell seventh column
+    &:nth-child(7)
+      #{$block}_role_bookings &
+        width: 8%
+
+    // $Common table cell eighth column
+    &:nth-child(8)
+      #{$block}_role_bookings &
+        width: 7%
+
+    // $Common table cell ninth column
+    &:nth-child(9)
+      #{$block}_role_bookings &
+        width: 6%
+        min-width: 80px
+
+    // $Common table cell tenth column
+    &:nth-child(10)
+      #{$block}_role_bookings &
+        width: 7%
+
+    // $Common table cell eleventh column
+    &:nth-child(11)
+      #{$block}_role_bookings &
+        width: 9%
+
+    // $Common table cell twelfth column
+    &:nth-child(12)
+      #{$block}_role_bookings &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 100px
+        background-color: $c-bg-light
+
+      @media screen and (max-width: 1600px)
+        #{$block}_role_bookings &
+          width: 90px
+
+    // $Common table cell thirteenth column
+    &:nth-child(13)
+      #{$block}_role_bookings &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 160px
+        background-color: $c-bg-light
+
+      @media screen and (max-width: 1600px)
+        #{$block}_role_bookings &
+          width: 150px
 
     // $Common table cell MOD: role header
     // $Common table cell MOD: role footer
@@ -187,8 +351,20 @@ $block: ".deposits-table"
     &_role_footer
       font-weight: 600
 
+    &_role_header:nth-child(12)
+      #{$block}_role_bookings &
+        background-color: $c-bg-secondary
+
+    &_role_header:nth-child(13)
+      #{$block}_role_bookings &
+        background-color: $c-bg-secondary
+
     &_role_footer:nth-child(1)
       #{$block}_role_deposits &
+        width: 40%
+        border-right: none
+
+      #{$block}_role_booking-transactions &
         width: 40%
         border-right: none
 
@@ -196,6 +372,8 @@ $block: ".deposits-table"
       #{$block}_role_deposits &
         width: 60%
 
+      #{$block}_role_booking-transactions &
+        width: 60%
 
     &_no-border
       &:not(:last-child)
@@ -259,6 +437,7 @@ $block: ".deposits-table"
     padding: 10px 15px
 
     #{$block}_role_bookings &,
+    #{$block}_role_booking-transactions &,
     #{$block}_role_deposits &
       padding-left: 10px
       padding-right: 10px
