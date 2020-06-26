@@ -229,6 +229,11 @@ $block: ".deposits-table"
         padding-left: 3px
         padding-right: 3px
 
+    @media screen and (max-width: 960px)
+      #{$block}_role_deposits &
+        padding-left: 5px
+        padding-right: 5px
+
     &:not(:last-child)
       border-right: 1px solid $c-border-primary
 
@@ -257,7 +262,7 @@ $block: ".deposits-table"
         text-align: center
 
       #{$block}_role_deposits &
-        width: 18%
+        width: 14%
 
     // $Common table cell third column
     &:nth-child(3)
@@ -280,7 +285,7 @@ $block: ".deposits-table"
         width: 30%
 
       #{$block}_role_deposits &
-        width: 22%
+        width: 18%
 
     // $Common table cell fifth column
     &:nth-child(5)
@@ -288,7 +293,8 @@ $block: ".deposits-table"
         width: 8%
 
       #{$block}_role_deposits &
-        width: 14%
+        width: 22%
+        text-align: center
 
     // $Common table cell sixth column
     &:nth-child(6)
@@ -361,7 +367,7 @@ $block: ".deposits-table"
 
     &_role_footer:nth-child(1)
       #{$block}_role_deposits &
-        width: 40%
+        width: 36%
         border-right: none
 
       #{$block}_role_booking-transactions &
@@ -370,7 +376,7 @@ $block: ".deposits-table"
 
     &_role_footer:nth-child(2)
       #{$block}_role_deposits &
-        width: 60%
+        width: 64%
 
       #{$block}_role_booking-transactions &
         width: 60%
@@ -388,6 +394,14 @@ $block: ".deposits-table"
       text-align: center
 
 
+  // $Common table info group
+  &__info-group
+    width: 100%
+
+    #{$block}_role_deposits #{$block}__cell:nth-child(5) &
+      margin-top: 10px
+
+
   // $Common table text
   &__text
     font-family: $f-sans
@@ -398,6 +412,10 @@ $block: ".deposits-table"
     & > b,
     #{$block}__cell_role_header &,
     #{$block}__cell_role_footer &
+      font-weight: 600
+
+    #{$block}_role_deposits #{$block}__cell:nth-child(5) &
+      margin-bottom: 10px
       font-weight: 600
 
     // $Common table text MOD: adjust no wrap
@@ -428,9 +446,16 @@ $block: ".deposits-table"
   &__actions
     text-align: center
 
+    #{$block}_role_deposits #{$block}__cell:nth-child(5) &
+      white-space: nowrap
+
 
   // $Common table action
   &__action
+
+    &:not(:last-child)
+      #{$block}_role_deposits #{$block}__cell:nth-child(5) &
+        margin-right: 10px
 
 
   &__placeholder
