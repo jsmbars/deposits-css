@@ -38,11 +38,13 @@ $block: ".deposits-form"
     // $Common form group MOD: size half
     // $Common form group MOD: size third
     // $Common form group MOD: size fourth
+    // $Common form group MOD: size fifth
     // $Common form group MOD: size max
     // $Common form group MOD: size min
     &_size_half,
     &_size_third,
     &_size_fourth,
+    &_size_fifth,
     &_size_max,
     &_size_min,
     &_size_fluid,
@@ -75,6 +77,15 @@ $block: ".deposits-form"
       flex-grow: 0
       flex-shrink: 1
       width: 25%
+
+      @media screen and (max-width: 960px)
+        flex-grow: 1
+        width: 100%
+
+    &_size_fifth
+      flex-grow: 0
+      flex-shrink: 1
+      width: 20%
 
       @media screen and (max-width: 960px)
         flex-grow: 1
@@ -314,12 +325,15 @@ $block: ".deposits-form"
 
     // $Common form field MOD: size half
     // $Common form field MOD: size third
+    // $Common form field MOD: size fourth
+    // $Common form field MOD: size fifth
     // $Common form field MOD: size max
     // $Common form field MOD: size min
     // $Common form field MOD: size fluid
     &_size_half,
     &_size_third,
     &_size_fourth,
+    &_size_fifth,
     &_size_max,
     &_size_min,
     &_size_fluid
@@ -348,6 +362,11 @@ $block: ".deposits-form"
       flex-grow: 0
       flex-shrink: 1
       width: 25%
+
+    &_size_fifth
+      flex-grow: 0
+      flex-shrink: 1
+      width: 20%
 
     &_size_max
       flex-grow: 1
