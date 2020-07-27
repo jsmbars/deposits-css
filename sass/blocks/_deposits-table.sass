@@ -295,7 +295,7 @@ $block: ".deposits-table"
         width: 30%
 
       #{$block}_role_deposits &
-        width: 18%
+        width: 20%
 
     // $Common table cell fifth column
     &:nth-child(5)
@@ -303,7 +303,9 @@ $block: ".deposits-table"
         width: 8%
 
       #{$block}_role_deposits &
-        width: 22%
+        flex-grow: 0
+        flex-shrink: 0
+        width: 170px
         text-align: center
 
     // $Common table cell sixth column
@@ -456,15 +458,30 @@ $block: ".deposits-table"
   &__actions
     text-align: center
 
-    #{$block}_role_deposits #{$block}__cell:nth-child(5) &
-      white-space: nowrap
+    #{$block}_role_deposits &
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: stretch
+
+    #{$block}_role_deposits #{$block}__info-group &
+      flex-direction: row
+      align-items: center
 
 
   // $Common table action
   &__action
 
+    #{$block}_role_deposits &
+      flex-grow: 1
+      flex-shrink: 1
+
     &:not(:last-child)
-      #{$block}_role_deposits #{$block}__cell:nth-child(5) &
+      #{$block}_role_deposits &
+        margin-bottom: 10px
+
+      #{$block}_role_deposits #{$block}__info-group &
+        margin-bottom: 0
         margin-right: 10px
 
 
