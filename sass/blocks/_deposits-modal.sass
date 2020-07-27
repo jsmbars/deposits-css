@@ -128,6 +128,8 @@ $block: ".deposits-modal"
       justify-content: center
       align-items: center
 
+    &_role_message
+      padding: 20px 0
 
   // $Modal window actions
   &__actions
@@ -151,12 +153,33 @@ $block: ".deposits-modal"
     display: inline-block
     width: 100%
     max-width: 200px
-    margin-bottom: 20px
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+    &_size_xs
+      max-width: 100px
+
+    &_size_s
+      max-width: 150px
+
+    &_size_l
+      max-width: 250px
+
+    &_size_xl
+      max-width: 300px
+
+    &_size_auto
+      width: auto
+      max-width: 100%
+
+    &_size_actual
+      width: auto
+      max-width: none
 
 
   // $Modal window title
   &__title
-    margin-bottom: 20px
     font-family: $f-sans
     font-size: 30px
     line-height: 1
@@ -164,8 +187,8 @@ $block: ".deposits-modal"
     color: $c-text-primary
     text-align: center
 
-    &:last-child
-      margin-bottom: 0
+    &:not(:last-child)
+      margin-bottom: 20px
 
 
   // $Modal window subtitle
@@ -180,8 +203,29 @@ $block: ".deposits-modal"
       font-size: 18px
       line-height: 1.3
 
+    &:not(:last-child)
+      margin-bottom: 20px
+
     &_size_extra
       font-size: 22px
+
+
+  // $Modal window subtitle light
+  &__subtitle-light
+    font-weight: 300
+
+
+  // $Modal window subtitle bold
+  &__subtitle-bold
+    font-weight: 600
+
+
+  // $Modal window subtitle line
+  &__subtitle-line
+    display: block
+
+    &:not(:last-child)
+      margin-bottom: 10px
 
 
   // $Modal window text
@@ -194,6 +238,24 @@ $block: ".deposits-modal"
 
     &_size_extra
       font-size: 16px
+
+
+  // $Modal window text light
+  &__text-light
+    font-weight: 300
+
+
+  // $Modal window text bold
+  &__text-bold
+    font-weight: 600
+
+
+  // $Modal window text line
+  &__text-line
+    display: block
+
+    &:not(:last-child)
+      margin-bottom: 10px
 
 
   // $Modal window link
